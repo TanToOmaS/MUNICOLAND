@@ -1,0 +1,8 @@
+CREATE TABLE evento_usuario (
+evento_ID VARCHAR(50),
+usuario_ID VARCHAR(50),
+FOREIGN KEY evento_fk(evento_ID)
+REFERENCES eventos(ID),
+FOREIGN KEY usuario_fk(usuario_ID)
+REFERENCES usuarios(ID),
+):
