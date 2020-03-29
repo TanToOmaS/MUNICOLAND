@@ -1,12 +1,16 @@
 <?php
-die("index.php");
+
 //SESSION STUFF FOR SAVING DATA ON $_SESSION
 //session_start();
 
 require_once('router.php');
 $router = new AltoRouter();
-$router->setBasePath('/api');
+#$router->setBasePath('/api');
 
+
+$router->map('GET', '/', function(){
+    die('It is working');
+});
 //MAPPINGS
 //TORNEOS
 $router->map('GET', '/torneos', function() {
@@ -18,6 +22,14 @@ $router->map('GET', '/torneos', function() {
 //}, '_articles');
 
 $match = $router->match();
+?>
+<pre>
+        <?php var_dump($match); ?>
+        Target: <?php var_dump($match['target']); ?>
+        Params: <?php var_dump($match['params']); ?>
+        Name:   <?php var_dump($match['name']); ?>
+</pre>
+<?php
 
 if ($match && is_callable($match['target'])) {
     //$_SESSION['params'] = $match['params'];
@@ -30,6 +42,7 @@ if ($match && is_callable($match['target'])) {
     //session_unset();
     //session_destroy();
 } else {
+    die("404");
     //session_unset();
     //session_destroy();
     // no route was matched so we return 404
