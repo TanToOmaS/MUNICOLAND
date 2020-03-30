@@ -5,7 +5,7 @@
 
 require_once('router.php');
 $router = new AltoRouter();
-#$router->setBasePath('/api');
+$router->setBasePath('/MUNICOLAND/controlador');
 
 
 $router->map('GET', '/', function(){

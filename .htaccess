@@ -1,4 +1,5 @@
+#ROUTING
 RewriteEngine on
 #RewriteBase /api
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule api controlador/index.php [L]
+RewriteRule . controlador/index.php [L]
