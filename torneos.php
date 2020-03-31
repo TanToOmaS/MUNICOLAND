@@ -57,7 +57,7 @@ if (isset($username)) {
     
 <div id="home">
     <div id="pueblo">
-            <h1 id="homehead">MUÑICOLAND</h1>
+            <h1 class="cabecera">MUÑICOLAND</h1>
     </div>        	
     
 <div id='eventos'>

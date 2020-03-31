@@ -25,6 +25,8 @@ if (isset($username)) {
   <head>
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <link rel="stylesheet" type="text/css" href="fonts.css">
+    <!-- FUENTE LUCKIEST GUY PARA HEADER DE LA WEB -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
      <!-- Materialize icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize minified CSS -->
@@ -57,7 +59,7 @@ if (isset($username)) {
     
 <div id="home">
     <div id="pueblo">
-            <h1 id="homehead">MUÑICOLAND</h1>
+            <h1 class="cabecera">MUÑICOLAND</h1>
     </div>            	
     <div id="tikitiki">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTikitikisummertime%2F&tabs=timeline&width=340&height=700&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=489868141175282" width="340" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
