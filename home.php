@@ -24,9 +24,7 @@ if (isset($username)) {
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <link rel="stylesheet" type="text/css" href="fonts.css">
-    <!-- FUENTE LUCKIEST GUY PARA HEADER DE LA WEB -->
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts.css">    
      <!-- Materialize icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize minified CSS -->

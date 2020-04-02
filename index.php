@@ -26,16 +26,16 @@ $user = new User();
   </head>
   <body>
     <div id="general">
-        <h1 align="center">¡BIENVENIDO A MUÑICOLAND!</h1>    
-        <div id="escudo" align="center"><img width="200" height="133" hspace="20" src="index/banderaavila.png"> <img align="center" width="150" height="268" hspace="20" src="index/escudopueblo.jpg"><img width="200" height="133" hspace="20" src="index/banderaspain.png"></div>                
+        <h1 class="bienvenido">¡BIENVENIDO A MUÑICOLAND!</h1>    
+        <div id="escudo"><img class="boxshadow" width="200" height="133" hspace="20" src="index/banderaavila.png"> <img class="boxshadow" width="150" height="268" hspace="20" src="index/escudopueblo.jpg"><img class="boxshadow" width="200" height="133" hspace="20" src="index/banderaspain.png"></div>                
         <hr style="color: #0056b2;"/>
-        <div class="logintitulo" align="center">INICIA SESIÓN:</div>
+        <div class="logintitulo">INICIA SESIÓN:</div>
                 <br>        
                 <form action="" method="post" class="formlogin">            
-                <input type="text" placeholder="USUARIO" name="USUARIO"/>            
+                <input class="grey darken-4" type="text" placeholder="USUARIO" name="USUARIO"/>            
                 <br>
                 <br>         
-                <input type="password" placeholder="CONTRASEÑA" name="PASSWORD">
+                <input class="grey darken-4" type="password" placeholder="CONTRASEÑA" name="PASSWORD">
                 <br>
                 <br>
               <div class="button">

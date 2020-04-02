@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 * {
   font-family: 'HURTMOLD_';
 }
@@ -6,6 +7,14 @@
 p {
   font-family: 'HURTMOLD_';
   color: #fff;
+}
+
+.bienvenido {
+  position: relative;
+  margin: 30px;
+  font-family: 'Luckiest Guy', cursive;
+  color: gold;
+  text-align: center;
 }
 
 .formlogin {
@@ -29,6 +38,11 @@ p {
   width: 50%;
   text-align: center;
   background-color: transparent;
+}
+
+.logintitulo p {
+  text-align: center;
+  font-size: 15px;
 }
 
 .botonAsistir {
@@ -87,7 +101,7 @@ table#progfiestas {
 }
 
 table#progfiestas caption {
-  font: sans-serif;
+  font-family: sans-serif;
   font-size: 1.4em;
   color: white;
   border: 1px solid #000;
@@ -99,9 +113,49 @@ td, tr, th {
 }
 
 #escudo {
-  margin: auto;
+  margin: 0 auto;
   width: 960px;
   height: 268px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.boxshadow {
+  -webkit-box-shadow: 1px 1px #000, 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000;
+          box-shadow: 1px 1px #000, 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #000;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #000;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000;
 }
 
 #banderaavila {
@@ -316,7 +370,7 @@ section {
   .menu_bar {
     display: block;
     width: 100%;
-    background: #ccc;
+    background: #000;
   }
   .menu_bar .bt-menu {
     display: block;
@@ -365,7 +419,7 @@ section {
   }
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: #000;
   }
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
