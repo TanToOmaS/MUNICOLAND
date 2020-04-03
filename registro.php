@@ -50,20 +50,15 @@ $PASSWORD = $_POST["PASSWORD"];
             <br>
                 <form action="registro.php" method="post" class="formlogin">            
                 <input class="grey darken-4" type="text" placeholder="USUARIO" name="USUARIO"/>            
-                <br>
-                <br>            
+                <br>                           
                 <input class="grey darken-4" type="text" placeholder="NOMBRE" name="NOMBRE"/>            
-                <br>
-                <br>            
+                <br>                           
                 <input class="grey darken-4" type="text" placeholder="APELLIDO" name="APELLIDO"/>           
-                <br>
-                <br>            
+                <br>                           
                 <input class="grey darken-4" type="email" placeholder="EMAIL" name="EMAIL"/>            
-                <br>
-                <br>
+                <br>                
                 <input class="grey darken-4" type="password" placeholder="PASSWORD" name="PASSWORD"/>
-                <br>
-                <br>
+                <br>                
                 <div class="button">
                 <button class="btn waves-effect waves-light" type="submit" name="CREAR">CREAR<i class="material-icons right">send</i></button>
                 </div>    
