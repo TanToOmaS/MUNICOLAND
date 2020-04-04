@@ -1,5 +1,7 @@
 <?php
 
+include_once('../repositorio/RepositorioTorneo.php');
+
 class ServicioTorneo {
 
     private $repositorioTorneo;

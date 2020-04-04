@@ -1,22 +1,63 @@
 <?php
 
-include("DB.php");
+include_once("RepositorioBase.php");
+include_once("RepositorioEquipo.php");
+include_once("../modelo/torneo.php");
 
-class RepositorioTorneo {
+class RepositorioTorneo extends RepositorioBase {
 
-    private $db;
+    private $repositorioEquipo;
 
     function __construct()
     {
-        $this->db = new DB()->connect(); 
+        $this->repositorioEquipo = new RepositorioEquipo();
+        parent::__construct();
     }
 
     function obtenerTorneos(){
 		$query = $this->db->prepare("SELECT * FROM torneos");
 		$query->execute();
-		$torneos = $query->get_result()->fetch_assoc();
+        $torneosDb = $query->fetchAll(PDO::FETCH_ASSOC);
+        $torneos = [];
+        foreach($torneosDb as $torneoDb) {
+            $torneo = $this->aTorneo($torneoDb);
+            $idsEquipos = $this->cargarEquiposParticipantes($torneo->id);
+            $equipos = [];
+            foreach($idsEquipos as $idEquipo) {
+                $equipo = $this->repositorioEquipo->obtenerEquipo($idEquipo);
+                array_push($equipos, $equipo);
+            }
+            $torneo->equipos = $equipos;    
+            //var_dump($torneo);die();
+            //Cargar rondas
+            //Cargar equipos
+            array_push($torneos, $torneo);
+        }
+        
+        //var_dump($torneos);die();
         return $torneos;
     }
 
-    
+    private function cargarEquiposParticipantes($idTorneo) {
+        $query = $this->db->prepare("SELECT ET_EQ_ID FROM equipos_torneos WHERE ET_T_ID = ?");
+        $query->bindParam(1, $idTorneo, PDO::PARAM_INT);
+		$query->execute();
+		$idsEquipos = $query->fetchAll(PDO::FETCH_COLUMN);
+        return $idsEquipos;
+    }
+
+    private function aTorneo($torneoDb){
+        return new Torneo(
+            $torneoDb["ID"],
+            $torneoDb["TORNEO"],
+            $torneoDb["FECHA"],
+            $torneoDb["HORA"],
+            $torneoDb["DESCRIPCION"],
+            null,
+            $torneoDb["NUM_CONTRINCANTES"],
+            $torneoDb["INICIO_INSCRIP"],
+            $torneoDb["FIN_INSCRIP"],
+            $torneoDb["LIMITE_EQUIPOS"]
+        );
+    }
 }
