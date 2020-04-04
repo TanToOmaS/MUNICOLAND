@@ -40,6 +40,10 @@ p {
   background-color: transparent;
 }
 
+.descripEvento {
+  font-size: 18px;
+}
+
 .logintitulo p {
   text-align: center;
   font-size: 15px;

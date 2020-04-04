@@ -107,7 +107,7 @@ while ($fila = mysqli_fetch_assoc($listaEventos))
          <i class="large material-icons">event_busy</i></button>'; ?>
             </div>
         <div class="card-content">
-         <p class="black" style="font-size: 18px"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
+         <p class="black descripEvento"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
         </div>
     </div>
    </div>
