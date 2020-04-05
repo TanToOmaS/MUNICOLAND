@@ -2,15 +2,18 @@
 
 include_once("RepositorioBase.php");
 include_once("RepositorioEquipo.php");
+include_once("RepositorioRonda.php");
 include_once("../modelo/torneo.php");
 
 class RepositorioTorneo extends RepositorioBase {
 
     private $repositorioEquipo;
+    private $repositorioRonda;
 
     function __construct()
     {
         $this->repositorioEquipo = new RepositorioEquipo();
+        $this->repositorioRonda = new RepositorioRonda();
         parent::__construct();
     }
 
@@ -27,10 +30,10 @@ class RepositorioTorneo extends RepositorioBase {
                 $equipo = $this->repositorioEquipo->obtenerEquipo($idEquipo);
                 array_push($equipos, $equipo);
             }
-            $torneo->equipos = $equipos;    
-            //var_dump($torneo);die();
-            //Cargar rondas
-            //Cargar equipos
+            $torneo->equipos = $equipos;
+            $rondas = $this->repositorioRonda->obtenerRondas($torneo->id);
+            $torneo->rondas = $rondas;
+            //Cargar enfrentamientos/rondas
             array_push($torneos, $torneo);
         }
         

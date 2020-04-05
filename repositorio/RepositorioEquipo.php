@@ -29,7 +29,15 @@ class RepositorioEquipo extends RepositorioBase {
         
         $equipo->usuarios = $usuarios;
         return $equipo;
-        
+    }
+    
+    function obtenerNombre($id){
+        $query = $this->db->prepare("SELECT EQ_NOMBRE FROM equipos WHERE EQ_ID = ?");
+        $query->bindParam(1, $id);
+		$query->execute();
+        $equipoDb = $query->fetch(PDO::FETCH_ASSOC);
+        $nombre = $equipoDb["EQ_NOMBRE"];
+        return $nombre;
     }
 
     private function cargarUsuariosEquipo($idEquipo) {
