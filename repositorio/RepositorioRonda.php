@@ -4,14 +4,17 @@ include_once("RepositorioBase.php");
 include_once("../modelo/ronda.php");
 include_once("../modelo/enfrentamiento.php");
 include_once("RepositorioEquipo.php");
+include_once("RepositorioResultado.php");
 
 class RepositorioRonda extends RepositorioBase {
 
     private $repositorioEquipo;
+    private $repositorioResultado;
 
     function __construct()
     {
         $this->repositorioEquipo = new RepositorioEquipo();
+        $this->repositorioResultado = new RepositorioResultado();
         parent::__construct();
     }
 
@@ -29,8 +32,9 @@ class RepositorioRonda extends RepositorioBase {
             $equipo2 = new Equipo($enfrentamiento->equipo2, $nombreEq2, null);
             $enfrentamiento->equipo1 = $equipo1;
             $enfrentamiento->equipo2 = $equipo2;
-            $numRonda = $this->extraerNumeroRonda($enfrentamientoDb);
-            // Cargar resultados del enfrentamiento
+            $numRonda = $this->extraerNumeroRonda($enfrentamientoDb);            
+            $resultado = $this->repositorioResultado->obtenerResultados($enfrentamiento->id);            
+            $enfrentamiento->resultados=$resultado;
             // Añadir enfrentamiento a su ronda correspondiente
             // 1. Comprobar si la ronda $numRonda ya existe en $rondas
             $rondaExistente = $this->buscarRonda($rondas, $numRonda);
