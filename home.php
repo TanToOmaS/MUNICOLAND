@@ -16,6 +16,20 @@ if (isset($username)) {
     header('Location:index.php');
 }
 
+        $queryEventos14 = "SELECT * FROM eventos WHERE FECHA = '2020-08-14'";
+        $queryEventos15 = "SELECT * FROM eventos WHERE FECHA = '2020-08-15'";
+        $queryEventos16 = "SELECT * FROM eventos WHERE FECHA = '2020-08-16'";
+        $queryAsistenciasUsuario = "SELECT EVENTO_ID
+FROM asiste
+WHERE USUARIO_ID = (
+	SELECT ID
+    FROM usuarios
+    WHERE USUARIO = '$username'
+)";
+        $listaEventos14 = mysqli_query($conexion, $queryEventos14);
+        $listaEventos15 = mysqli_query($conexion, $queryEventos15);
+        $listaEventos16 = mysqli_query($conexion, $queryEventos16);
+        $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $queryAsistenciasUsuario), MYSQLI_NUM), 0); 
 
 ?>
 
@@ -69,30 +83,16 @@ if (isset($username)) {
         <div id='eventos'>
 
             <?php include "ocurriendo.php";
-            //include "carousel.php";
-            $queryEventos14 = "SELECT * FROM eventos WHERE FECHA = '2020-08-14'";
-            $queryEventos15 = "SELECT * FROM eventos WHERE FECHA = '2020-08-15'";
-            $queryEventos16 = "SELECT * FROM eventos WHERE FECHA = '2020-08-16'";
-            $queryAsistenciasUsuario = "SELECT EVENTO_ID
-FROM asiste
-WHERE USUARIO_ID = (
-	SELECT ID
-    FROM usuarios
-    WHERE USUARIO = '$username'
-)";
-        $listaEventos14 = mysqli_query($conexion, $queryEventos14);
-        $listaEventos15 = mysqli_query($conexion, $queryEventos15);
-        $listaEventos16 = mysqli_query($conexion, $queryEventos16);
-        $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $queryAsistenciasUsuario), MYSQLI_NUM), 0); 
- ?>
+            //include "carousel.php"; ?>
 
         </div>
-        <h3 span class="tituloTorneo">EVENTOS DEL VIERNES 14 DE AGOSTO:</span></h3>
-        <div class="row">
-            <div class="col s6 m8">
-                <div class="card horizontal grey darken-3">
-                    
-                    
+        
+        
+        <div class="row grey darken-3">
+        <h3 span class="tituloTorneo">EVENTOS DEL VIERNES 14 DE AGOSTO:</span>
+            <div class="col s3 m2">
+                 <div class="carousel carousel-slider center"> 
+
                     <?php                   
                    
                     while ($fila = mysqli_fetch_assoc($listaEventos14)) {
@@ -100,59 +100,51 @@ WHERE USUARIO_ID = (
                         $asiste = in_array($ID, $asistenciasUsuario);
                     ?>
         
-         <div class="card grey darken-3">
-             <div class="card-image">
-                 <img src="<?php echo  $fila['IMAGEN'] ?>">
-                 <span class="card-title"><?php echo  $fila['EVENTO'] ?></span>
-                 <?php echo '<button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light green botonAsistir" data-idevento="' . $ID . '" data-showonstart="' . json_encode(!$asiste) . '" onclick="asistir(' . $ID . ')">
-      <i class="large material-icons">event_available</i></button>'; ?>
-                                <?php echo '<button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red botonNoAsistir" data-idevento="' . $ID . '" data-showonstart="' . json_encode($asiste) . '" onclick="noAsistir(' . $ID . ')">
-      <i class="large material-icons">event_busy</i></button>'; ?>
-                 </div>
-                 <div class="card-content">
-                     <p class="black" style="font-size: 18px"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
-                 </div>
-             </div>
+                    <div class="carousel-fixed-item center">
+                        <a class="btn waves-effect teal lighten-2 white-text darken-text-2">ME PUNTO</a>
+                    </div>
+                    <div class="carousel-item white-text" href="#one!">
+                        <h2><?php echo  $fila['EVENTO'] ?></h2>
+                        <p class="white-text"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
+                        <img src="<?php echo  $fila['IMAGEN'] ?>">            
+                    </div>
 
                     <?php } ?>
                 </div>
             </div>
         </div>
+        
+        <div class="row grey darken-3">
         <h3 span class="tituloTorneo">EVENTOS DEL SÁBADO 15 DE AGOSTO:</span>
-        <div class="row">
-            <div class="col s6 m8">
-                <div class="card horizontal grey darken-3">
+            <div class="col s3 m2">
+                 <div class="carousel carousel-slider center">
 
                     <?php
                     
                     while ($fila = mysqli_fetch_assoc($listaEventos15)) {
                         $ID = $fila["ID"];
                         $asiste = in_array($ID, $asistenciasUsuario);
-                    ?>
-                        
-                        <div class="card grey darken-3">
-                            <div class="card-image">
-                                <img src="<?php echo  $fila['IMAGEN'] ?>">
-                                <span class="card-title"><?php echo  $fila['EVENTO'] ?></span>
-                                <?php echo '<button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light green botonAsistir" data-idevento="' . $ID . '" data-showonstart="' . json_encode(!$asiste) . '" onclick="asistir(' . $ID . ')">
-      <i class="large material-icons">event_available</i></button>'; ?>
-                                <?php echo '<button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red botonNoAsistir" data-idevento="' . $ID . '" data-showonstart="' . json_encode($asiste) . '" onclick="noAsistir(' . $ID . ')">
-      <i class="large material-icons">event_busy</i></button>'; ?>
-                            </div>
-                            <div class="card-content">
-                                <p class="black" style="font-size: 18px"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
-                            </div>
-                        </div>
+                    ?>                        
+                        <div class="carousel-fixed-item center">
+                        <a class="btn waves-effect  teal lighten-2 white-text darken-text-2">ME PUNTO</a>
+                    </div>
+                    <div class="carousel-item white-text" href="#one!">
+                        <h2><?php echo  $fila['EVENTO'] ?></h2>
+                        <p class="white-text"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
+                        <img src="<?php echo  $fila['IMAGEN'] ?>">            
+                    </div>
 
                     <?php } ?>
                     
-                    </div>
+                </div>
             </div>
         </div>
+        
+        <div class="row grey darken-3">
         <h3 span class="tituloTorneo">EVENTOS DEL DOMINGO 16 DE AGOSTO:</span>
-        <div class="row">
-            <div class="col s6 m8">
-                <div class="card horizontal grey darken-3">
+            <div class="col s3 m2">
+                      <div class="carousel carousel-slider center">
+
 
                     <?php
                     
@@ -161,36 +153,39 @@ WHERE USUARIO_ID = (
                         $asiste = in_array($ID, $asistenciasUsuario);
                     ?>
                     
-                        <div class="card grey darken-3">
-                            <div class="card-image">
-                                <img src="<?php echo  $fila['IMAGEN'] ?>">
-                                <span class="card-title"><?php echo  $fila['EVENTO'] ?></span>
-                                <?php echo '<button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light green botonAsistir" data-idevento="' . $ID . '" data-showonstart="' . json_encode(!$asiste) . '" onclick="asistir(' . $ID . ')">
-      <i class="large material-icons">event_available</i></button>'; ?>
-                                <?php echo '<button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red botonNoAsistir" data-idevento="' . $ID . '" data-showonstart="' . json_encode($asiste) . '" onclick="noAsistir(' . $ID . ')">
-      <i class="large material-icons">event_busy</i></button>'; ?>
-                            </div>
-                            <div class="card-content">
-                                <p class="black" style="font-size: 18px"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
-                            </div>
-                        </div>
+                    <div class="carousel-fixed-item center">
+                        <a class="btn waves-effect  teal lighten-2 white-text darken-text-2">ME PUNTO</a>
+                    </div>
+                    <div class="carousel-item white-text" href="#one!">
+                        <h2><?php echo  $fila['EVENTO'] ?></h2>
+                        <p class="white-text"><?php echo " EL " . $fila['FECHA'] . " EN " . $fila['LUGAR'] ?></p>
+                        <img src="<?php echo  $fila['IMAGEN'] ?>">            
+                    </div>
 
                     <?php }  ?>
 
                 </div>
             </div>
-        </div>
-        <!-- ZONA JAVASCRIPT: -->
+        </div>      
 
-        <script type="text/javascript" src="util.js"></script>
+</body>
+
+<!-- ZONA JAVASCRIPT: -->
+
+<script type="text/javascript" src="util.js"></script>
         <script type="text/javascript" src="botonesAsistir.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
-    </div>
-
-</body>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems, {
+            duration: 300,
+            indicators: true,
+            fullWidth: true
+        });
+        });
+        </script> 
 
 </html>
