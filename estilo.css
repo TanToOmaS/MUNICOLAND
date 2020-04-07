@@ -40,6 +40,18 @@ p {
   background-color: transparent;
 }
 
+.mostrarEvento {
+  width: 640px;
+  height: 345px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .descripEvento {
   font-size: 18px;
 }

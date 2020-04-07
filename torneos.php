@@ -87,7 +87,7 @@ while ($fila = mysqli_fetch_assoc($listaTorneos))
     $asiste = in_array($ID, $asistenciasTorneo);
 ?>
 
-    <div class="col s12 m12">    
+    <div class="mostrarEvento">    
     <div class="card horizontal grey darken-3">
             <div class="card-image">
          <img src="<?php echo  $fila['IMAG1'] ?>"> 
