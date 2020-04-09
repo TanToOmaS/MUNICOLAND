@@ -8,7 +8,6 @@ class Usuario
     public $nombre;
     public $apellido;
     public $email;
-    public $password;
 
     function __construct(
 
@@ -16,8 +15,7 @@ class Usuario
         $usuario,
         $nombre,
         $apellido,
-        $email,
-        $password
+        $email
 
     ) {
       $this->id=$id;
@@ -25,7 +23,5 @@ class Usuario
       $this->nombre=$nombre;
       $this->apellido=$apellido;
       $this->email=$email;
-      $this->password=$password;
-        
     }
 }

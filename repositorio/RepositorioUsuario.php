@@ -24,8 +24,7 @@ class RepositorioUsuario extends RepositorioBase
             $usuarioDb["USUARIO"],
             $usuarioDb["NOMBRE"],
             $usuarioDb["APELLIDO"],
-            $usuarioDb["EMAIL"],
-            $usuarioDb["PASSWORD"]
+            $usuarioDb["EMAIL"]
         );
     }
 }
