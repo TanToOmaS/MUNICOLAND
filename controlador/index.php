@@ -15,6 +15,13 @@ $router->map('GET', '/torneos', function() {
     $controlador->obtenerTorneos();
 }, 'torneos_obtener');
 
+//EVENTOS
+$router->map('GET', '/eventos', function() {
+    include_once('ControladorEventos.php');
+    $controlador = new ControladorEventos();
+    $controlador->obtenerEventos();
+}, 'eventos_obtener');
+
 //$router->map('GET', '/premises/[i:premises_id]/articles', function() {
 //    require('Articles/GetArticles.php');
 //}, '_articles');

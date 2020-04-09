@@ -14,7 +14,6 @@ class ServicioTorneo {
     function obtenerTorneos() {
         $torneos = $this->repositorioTorneo->obtenerTorneos();
         return $torneos;
-        //https://github.com/dannyvankooten/AltoRouter
     }
 
 }

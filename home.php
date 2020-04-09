@@ -90,7 +90,6 @@ $listaEventos = mysqli_query($conexion, $queryEventos);
 $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $queryAsistenciasUsuario), MYSQLI_NUM), 0);
 
 while ($fila = mysqli_fetch_assoc($listaEventos))
-
 {
     $ID = $fila["ID"];
     $asiste = in_array($ID, $asistenciasUsuario);
