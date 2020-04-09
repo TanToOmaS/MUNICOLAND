@@ -1,3 +1,12 @@
+function get(url, success, error){
+  $.ajax({
+      type: "GET",
+      url: url,
+      success: success,
+      error: error
+  })
+}
+
 function post(url, data, success, error){
     $.ajax({
         type: "POST",
