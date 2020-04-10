@@ -56,28 +56,37 @@ $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $que
 </head>
 
 <body>
-    <header>
-
-        <div class="menu_bar">
-            <a href="#" class="bt-menu"><span class="icon-list2"></span>Menu</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.php"><span class="tiny material-icons">home</span>EL PUEBLO</a></li>
-                <li><a href="#"><span class="tiny material-icons">local_bar</span>FIESTAS</a></li>
-                <li><a href="torneos.php"><span class="tiny material-icons">videogame_asset</span>TORNEOS</a></li>
-                <li><a href="#"><span class="tiny material-icons">book</span>AZRAEL</a></li>
-                <li><a href="#"><span class="tiny material-icons">live_tv</span>MULTIMEDIA</a></li>
-                <li><a href="logout.php"><span class="tiny material-icons">exit_to_app</span>CERRAR SESIÓN</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- estructura dropdown para el navbar -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">LUCHA</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">CARRERAS</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">DEPORTES</a></li>
+    </ul>
 
     <div class="container">
+        <header>
+            <nav>
+                <div class="nav-wrapper orange darken-2">
+                    <a href="home.php" class="brand-logo right">MUÑICOLAND</a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="home.php"><span class="tiny material-icons">home</span> EL PUEBLO</a></li>
+                        <li><a href="#"><span class="tiny material-icons">local_bar</span> FIESTAS</a></li>
+                        <li><a class="dropdown-trigger" href="torneos.php" data-target="dropdown1"><span class="material-icons">videogame_asset</span> TORNEOS</a></li>
+                        <li><a href="#"><span class="tiny material-icons">book</span> AZRAEL</a></li>
+                        <li><a href="#"><span class="tiny material-icons">live_tv</span> MULTIMEDIA</a></li>
+                        <li><a href="logout.php"><span class="tiny material-icons">exit_to_app</span> CERRAR SESIÓN</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
         <div id="pueblo">
             <h1 id="homehead">MUÑICOLAND</h1>
         </div>
-        <!-- <div id="tikitiki">
+        <!-- <div id="Municontundence">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTikitikisummertime%2F&tabs=timeline&width=340&height=700&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=489868141175282" width="340" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
         </div> -->
         <div id='eventos'>
@@ -188,6 +197,11 @@ $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $que
     setInterval(function() {
         $('.carousel').carousel('next');
     }, 4500);
+    $(document).ready(function() {
+        $(".dropdown-trigger").dropdown(
+            {hover: true}
+            );
+    });
 </script>
 
 </html>
