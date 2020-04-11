@@ -4,6 +4,7 @@ include_once("RepositorioBase.php");
 include_once("RepositorioEquipo.php");
 include_once("RepositorioRonda.php");
 include_once("../modelo/torneo.php");
+include_once("../util/constantes.php");
 
 class RepositorioTorneo extends RepositorioBase {
 
@@ -49,6 +50,10 @@ class RepositorioTorneo extends RepositorioBase {
         return $idsEquipos;
     }
 
+    private function obtenerUrlCompleta($url){
+        return Constantes::URL_BASE . $url;
+    }
+
     private function aTorneo($torneoDb){
         return new Torneo(
             $torneoDb["ID"],
@@ -61,9 +66,9 @@ class RepositorioTorneo extends RepositorioBase {
             $torneoDb["INICIO_INSCRIP"],
             $torneoDb["FIN_INSCRIP"],
             $torneoDb["LIMITE_EQUIPOS"],
-            $torneoDb["IMAG1"],
-            $torneoDb["IMAG2"],
-            $torneoDb["IMAG3"]
+            $this->obtenerUrlCompleta($torneoDb["IMAG1"]),
+            $this->obtenerUrlCompleta($torneoDb["IMAG2"]),
+            $this->obtenerUrlCompleta($torneoDb["IMAG3"])
         );
     }
 }
