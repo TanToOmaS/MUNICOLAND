@@ -44,6 +44,16 @@ class RepositorioEvento extends RepositorioBase {
         return $query->execute();
     }
 
+    function eliminarAsistencia($username, $idEvento){
+        $usuario = $this->repositorioUsuario->obtenerUsuarioPorUsername($username);
+        $idUsuario = $usuario->id;
+
+        $query = $this->db->prepare("DELETE FROM asiste WHERE USUARIO_ID = ? AND EVENTO_ID = ?");
+        $query->bindParam(1, $idUsuario, PDO::PARAM_INT);
+        $query->bindParam(2, $idEvento, PDO::PARAM_INT);
+        return $query->execute();
+    }
+
     private function cargarIdsUsuarios($idEvento) {
         $query = $this->db->prepare("SELECT USUARIO_ID FROM asiste WHERE EVENTO_ID = ?");
         $query->bindParam(1, $idEvento, PDO::PARAM_INT);

@@ -34,15 +34,17 @@ $router->map('GET', '/eventos', function() {
 $router->map('POST', '/eventos/[i:id_evento]/asistencia', function($idEvento) {
     include_once('ControladorEventos.php');
     $controlador = new ControladorEventos();
-    $controlador->registrarAsistencia(getUsername(), $idEvento);
+    $controlador->registrarAsistencia(getUsername(), $idEvento, true);
 }, 'eventos_asistir');
 
-//$router->map('GET', '/premises/[i:premises_id]/articles', function() {
-//    require('Articles/GetArticles.php');
-//}, '_articles');
+$router->map('DELETE', '/eventos/[i:id_evento]/asistencia', function($idEvento) {
+    include_once('ControladorEventos.php');
+    $controlador = new ControladorEventos();
+    $controlador->registrarAsistencia(getUsername(), $idEvento, false);
+}, 'eventos_no_asistir');
+
 
 $match = $router->match();
-
 
 if ($match && is_callable($match['target'])) {
     //$_SESSION['params'] = $match['params'];

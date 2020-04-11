@@ -15,8 +15,8 @@ class ControladorEventos {
         die(json_encode($eventos));
     }
 
-    function registrarAsistencia($username, $idEvento){
-        $resultado = $this->servicioEventos->registrarAsistencia($username, $idEvento);
+    function registrarAsistencia($username, $idEvento, $asiste){
+        $resultado = $this->servicioEventos->registrarAsistencia($username, $idEvento, $asiste);
         if($resultado == true){
             http_response_code(200);
         }else{

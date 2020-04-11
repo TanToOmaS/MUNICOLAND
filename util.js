@@ -17,6 +17,16 @@ function post(url, data, success, error){
     })
 }
 
+function deleteRequest(url, data, success, error){
+  $.ajax({
+      type: "DELETE",
+      url: url,
+      data: data,
+      success: success,
+      error: error
+  })
+}
+
 function toast(tipo, mensaje){
     const Toast = Swal.mixin({
         toast: true,

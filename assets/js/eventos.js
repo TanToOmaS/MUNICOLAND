@@ -99,19 +99,14 @@ function asistir(idEvento){
 function noAsistir(idEvento){
     const botonAsistir = $('.botonAsistir[data-idEvento="' + idEvento + '"]');
     const botonNoAsistir = $('.botonNoAsistir[data-idEvento="' + idEvento + '"]');
-
-    const datos = 'ID=' + idEvento;
-    post(
-        'NOasistencia.php',
-        datos,
+    
+    deleteRequest(
+        `http://localhost/municoland/controlador/eventos/${idEvento}/asistencia`,
+        null,
         r => {
-            if(r == 'true') {
-                botonAsistir.show();
-                botonNoAsistir.hide();
-                toast('warning', '!Que pena!');
-            }else{ 
-                toast('error', 'Ha habido un error');
-            }
+            botonAsistir.show();
+            botonNoAsistir.hide();
+            toast('warning', '!Qué pena!');
         },
         () => toast('error', 'Ha habido un error')
     )

@@ -16,8 +16,12 @@ class ServicioEvento {
         return $eventos;
     }
 
-    function registrarAsistencia($username, $idEvento){
-        return $this->repositorioEvento->registrarAsistencia($username, $idEvento);
+    function registrarAsistencia($username, $idEvento, $asiste){
+        if($asiste == true){
+            return $this->repositorioEvento->registrarAsistencia($username, $idEvento);
+        }else{
+            return $this->repositorioEvento->eliminarAsistencia($username, $idEvento);
+        }
     }
 
 }
