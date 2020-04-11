@@ -60,7 +60,10 @@ class RepositorioTorneo extends RepositorioBase {
             $torneoDb["NUM_CONTRINCANTES"],
             $torneoDb["INICIO_INSCRIP"],
             $torneoDb["FIN_INSCRIP"],
-            $torneoDb["LIMITE_EQUIPOS"]
+            $torneoDb["LIMITE_EQUIPOS"],
+            $torneoDb["IMAG1"],
+            $torneoDb["IMAG2"],
+            $torneoDb["IMAG3"]
         );
     }
 }

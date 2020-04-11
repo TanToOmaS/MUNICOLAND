@@ -1,13 +1,7 @@
 <?php 
 
-include_once "user.php";
-include_once "user_session.php";
-include_once 'conexion.php';
-include_once "funciones_bd.php";
-
 session_start();
 $username = $_SESSION['user'];
-
 
 if (isset($username)) {
     echo "<h3 align='center'>¡Bienvenido! Estás registrado como ". $username. "</h3>";
@@ -131,7 +125,6 @@ while ($fila = mysqli_fetch_assoc($listaTorneos))
   <!-- ZONA JAVASCRIPT: -->
 
 <script type="text/javascript" src="assets/js/util.js"></script>
-<script type="text/javascript" src="botonesAsistir.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -179,16 +172,6 @@ function noAsistirTorneo(idTorneo){
         () => toast('error', 'Ha habido un error')
     )
 }
-
-// function asistir(idTorneo){
-//     const datos = 'ID=' + idTorneo;
-//     post(
-//         'funciones_torneos.php',
-//         datos,
-//         r => r == 'true' ? alert('¡Te esperamos!') : alert("Ha habido un error"),
-//         () => alert("Ha fallado la petición")
-//     )
-// }
 
 </script>
  </html>

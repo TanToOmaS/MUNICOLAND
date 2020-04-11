@@ -13,6 +13,9 @@ class Torneo
     public $inicioInscripcion;
     public $finInscripcion;
     public $limiteEquipos;
+    public $img1;
+    public $img2;
+    public $img3;
 
     public $equipos; //Array de equipos que participan
 
@@ -26,7 +29,10 @@ class Torneo
         $numContrincantes,
         $inicioInscripcion,
         $finInscripcion,
-        $limiteEquipos
+        $limiteEquipos,
+        $img1,
+        $img2,
+        $img3
     ) {
         $this->id = $id;
         $this->tipo = $tipo;
@@ -38,5 +44,8 @@ class Torneo
         $this->inicioInscripcion = $inicioInscripcion;
         $this->finInscripcion = $finInscripcion;
         $this->limiteEquipos = $limiteEquipos;
+        $this->img1 = $img1;
+        $this->img2 = $img2;
+        $this->img3 = $img3;
     }
 }
