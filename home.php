@@ -1,13 +1,7 @@
 <?php
 
-include_once "user.php";
-include_once "user_session.php";
-include_once 'conexion.php';
-include_once "funciones_bd.php";
-
 session_start();
 $username = $_SESSION['user'];
-
 
 if (isset($username)) {
     echo "<h3 align='center'>¡Bienvenido! Estás registrado como " . $username . "</h3>";
