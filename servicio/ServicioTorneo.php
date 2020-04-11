@@ -26,10 +26,12 @@ class ServicioTorneo {
     function registrarParticipacion($username, $idTorneo, $participa){
         $usuario = $this->repositorioUsuario->obtenerUsuarioPorUsername($username);
         $equipo = $this->repositorioEquipo->obtenerEquipoPorIdUsuario($usuario->id);
+        
         if($equipo == null) {
             // Crear equipo
             $equipoACrear = new Equipo(null, $username, [$usuario]);
             $equipo = $this->repositorioEquipo->crear($equipoACrear);
+            $this->repositorioEquipo->asignarUsuarioAEquipo($equipo->id, $usuario->id);
         }
 
         $idEquipo = $equipo->id;

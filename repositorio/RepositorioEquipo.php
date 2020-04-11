@@ -34,12 +34,12 @@ class RepositorioEquipo extends RepositorioBase {
     function obtenerEquipoPorIdUsuario($idUsuario){
         $query = $this->db->prepare("SELECT USE_EQ_ID FROM usuarios_equipos WHERE USE_U_ID = ?");
         $query->bindParam(1, $idUsuario);
-		$query->execute();
-        $idEquipo = $query->fetch(PDO::FETCH_COLUMN);
-        if($idEquipo == null){
-            return null;
-        }else{
+        $query->execute();
+        if($query->rowCount() > 0){
+            $idEquipo = $query->fetch(PDO::FETCH_COLUMN);
             return $this->obtenerEquipo($idEquipo);
+        }else{
+            return null;
         }
     }
 
@@ -51,6 +51,12 @@ class RepositorioEquipo extends RepositorioBase {
         return $equipo;
     }
     
+    function asignarUsuarioAEquipo($idEquipo, $idUsuario){
+        $query = $this->db->prepare("INSERT INTO usuarios_equipos VALUES(?, ?)");
+        $query->bindParam(1, $idEquipo);
+        $query->bindParam(2, $idUsuario);
+        return $query->execute();
+    }
     function obtenerNombre($id){
         $query = $this->db->prepare("SELECT EQ_NOMBRE FROM equipos WHERE EQ_ID = ?");
         $query->bindParam(1, $id);
