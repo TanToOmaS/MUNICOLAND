@@ -17,6 +17,17 @@ class RepositorioUsuario extends RepositorioBase
         return $usuario;
     }
 
+    
+    function obtenerUsuarioPorUsername($username)
+    {
+        $query = $this->db->prepare("SELECT * FROM usuarios WHERE USUARIO = ?");
+        $query->bindParam(1, $username, PDO::PARAM_STR);
+        $query->execute();
+        $usuarioDb = $query->fetch(PDO::FETCH_ASSOC);
+        $usuario = $this->aUsuario($usuarioDb);
+        return $usuario;
+    }
+
     private function aUsuario($usuarioDb)
     {
         return new Usuario(

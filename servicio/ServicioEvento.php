@@ -16,4 +16,8 @@ class ServicioEvento {
         return $eventos;
     }
 
+    function registrarAsistencia($username, $idEvento){
+        return $this->repositorioEvento->registrarAsistencia($username, $idEvento);
+    }
+
 }

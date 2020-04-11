@@ -34,6 +34,16 @@ class RepositorioEvento extends RepositorioBase {
         return $eventos;
     }
 
+    function registrarAsistencia($username, $idEvento){
+        $usuario = $this->repositorioUsuario->obtenerUsuarioPorUsername($username);
+        $idUsuario = $usuario->id;
+
+        $query = $this->db->prepare("INSERT INTO asiste VALUES (?, ?)");
+        $query->bindParam(1, $idUsuario, PDO::PARAM_INT);
+        $query->bindParam(2, $idEvento, PDO::PARAM_INT);
+        return $query->execute();
+    }
+
     private function cargarIdsUsuarios($idEvento) {
         $query = $this->db->prepare("SELECT USUARIO_ID FROM asiste WHERE EVENTO_ID = ?");
         $query->bindParam(1, $idEvento, PDO::PARAM_INT);

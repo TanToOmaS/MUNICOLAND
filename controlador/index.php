@@ -1,11 +1,20 @@
 <?php
 
 //SESSION STUFF FOR SAVING DATA ON $_SESSION
-//session_start();
+session_start();
 
 require_once('router.php');
 $router = new AltoRouter();
 $router->setBasePath('/MUNICOLAND/controlador');
+
+function getUsername() {
+    $username =  $_SESSION['user'] ?? null;
+    if($username == null){
+        http_response_code(401);
+        die();
+    }
+    return $username;
+}
 
 //MAPPINGS
 //TORNEOS
@@ -21,6 +30,12 @@ $router->map('GET', '/eventos', function() {
     $controlador = new ControladorEventos();
     $controlador->obtenerEventos();
 }, 'eventos_obtener');
+
+$router->map('POST', '/eventos/[i:id_evento]/asistencia', function($idEvento) {
+    include_once('ControladorEventos.php');
+    $controlador = new ControladorEventos();
+    $controlador->registrarAsistencia(getUsername(), $idEvento);
+}, 'eventos_asistir');
 
 //$router->map('GET', '/premises/[i:premises_id]/articles', function() {
 //    require('Articles/GetArticles.php');
