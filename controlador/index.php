@@ -24,6 +24,19 @@ $router->map('GET', '/torneos', function() {
     $controlador->obtenerTorneos();
 }, 'torneos_obtener');
 
+$router->map('POST', '/torneos/[i:id_torneo]/participacion', function($idTorneo) {
+    include_once('ControladorTorneos.php');
+    $controlador = new ControladorTorneos();
+    $controlador->registrarParticipacion(getUsername(), $idTorneo, true);
+}, 'torneos_participar');
+
+$router->map('DELETE', '/torneos/[i:id_torneo]/participacion', function($idTorneo) {
+    include_once('ControladorTorneos.php');
+    $controlador = new ControladorTorneos();
+    $controlador->registrarParticipacion(getUsername(), $idTorneo, false);
+}, 'torneos_no_participar');
+
+
 //EVENTOS
 $router->map('GET', '/eventos', function() {
     include_once('ControladorEventos.php');

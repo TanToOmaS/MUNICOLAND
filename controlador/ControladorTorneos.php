@@ -15,4 +15,13 @@ class ControladorTorneos {
         die(json_encode($torneos));
     }
 
+    function registrarParticipacion($username, $idTorneo, $participa){
+        $resultado = $this->servicioTorneos->registrarParticipacion($username, $idTorneo, $participa);
+        if($resultado == true){
+            http_response_code(200);
+        }else{
+            http_response_code(400);
+        }
+    }
+
 }

@@ -42,6 +42,20 @@ class RepositorioTorneo extends RepositorioBase {
         return $torneos;
     }
 
+    function registrarParticipacion($idEquipo, $idTorneo){
+        $query = $this->db->prepare("INSERT INTO equipos_torneos VALUES (?, ?)");
+        $query->bindParam(1, $idEquipo, PDO::PARAM_INT);
+        $query->bindParam(2, $idTorneo, PDO::PARAM_INT);
+        return $query->execute();
+    }
+
+    function eliminarParticipacion($idEquipo, $idTorneo){
+        $query = $this->db->prepare("DELETE FROM equipos_torneos WHERE ET_EQ_ID = ? AND ET_T_ID = ?");
+        $query->bindParam(1, $idEquipo, PDO::PARAM_INT);
+        $query->bindParam(2, $idTorneo, PDO::PARAM_INT);
+        return $query->execute();
+    }
+
     private function cargarEquiposParticipantes($idTorneo) {
         $query = $this->db->prepare("SELECT ET_EQ_ID FROM equipos_torneos WHERE ET_T_ID = ?");
         $query->bindParam(1, $idTorneo, PDO::PARAM_INT);
