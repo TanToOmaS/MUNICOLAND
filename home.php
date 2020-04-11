@@ -107,7 +107,7 @@ if (isset($username)) {
     <script type="text/javascript">
         const username = '<?php echo $username; ?>';
     </script>
-    <script type="text/javascript" src="util.js"></script>
+    <script type="text/javascript" src="assets/js/util.js"></script>
     <script type="text/javascript" src="assets/js/eventos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- Compiled and minified JavaScript -->

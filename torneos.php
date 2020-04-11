@@ -130,7 +130,7 @@ while ($fila = mysqli_fetch_assoc($listaTorneos))
 
   <!-- ZONA JAVASCRIPT: -->
 
-<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="assets/js/util.js"></script>
 <script type="text/javascript" src="botonesAsistir.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- Compiled and minified JavaScript -->
