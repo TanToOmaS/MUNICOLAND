@@ -90,18 +90,13 @@ function asistirTorneo(idTorneo) {
     const botonAsistir = $('.botonAsistir[data-idTorneo="' + idTorneo + '"]');
     const botonNoAsistir = $('.botonNoAsistir[data-idTorneo="' + idTorneo + '"]');
 
-    const datos = 'ID=' + idTorneo;
     post(
-        'asistirTorneo.php',
-        datos,
+        `http://localhost/municoland/controlador/torneos/${idTorneo}/participacion`,
+        null,
         r => {
-            if (r == 'true') {
-                botonAsistir.hide();
-                botonNoAsistir.show();
-                toast('success', '!Te esperamos!');
-            } else {
-                toast('error', 'Ha habido un error');
-            }
+            botonAsistir.hide();
+            botonNoAsistir.show();
+            toast('success', '!Te esperamos!');
         },
         () => toast('error', 'Ha habido un error')
     )
@@ -111,18 +106,13 @@ function noAsistirTorneo(idTorneo) {
     const botonAsistir = $('.botonAsistir[data-idTorneo="' + idTorneo + '"]');
     const botonNoAsistir = $('.botonNoAsistir[data-idTorneo="' + idTorneo + '"]');
 
-    const datos = 'ID=' + idTorneo;
-    post(
-        'noAsistirTorneo.php',
-        datos,
+    deleteRequest(
+        `http://localhost/municoland/controlador/torneos/${idTorneo}/participacion`,
+        null,
         r => {
-            if (r == 'true') {
-                botonAsistir.show();
-                botonNoAsistir.hide();
-                toast('warning', '!Que pena!');
-            } else {
-                toast('error', 'Ha habido un error');
-            }
+            botonAsistir.show();
+            botonNoAsistir.hide();
+            toast('warning', '!Qué pena!');
         },
         () => toast('error', 'Ha habido un error')
     )
