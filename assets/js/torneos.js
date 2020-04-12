@@ -9,7 +9,7 @@ function cargarTorneos(){
         response => {
             const torneos = JSON.parse(response);
             mostrarTorneos(torneos);
-            //refrescarBotones();
+            refrescarBotones();
         },
         error => {
             console.error('Error al cargar los eventos', error);
@@ -23,7 +23,7 @@ function mostrarTorneos(torneos){
     const plantilla = $('#plantilla-torneo');
     const plantillaString = plantilla.prop('outerHTML');    // Convertimos el elemento html a string
     $.each(torneos, function(i, torneo) {
-        const asiste = true;
+        const asiste = comprobarAsistencia(torneo.equipos, torneo.equipos);
         const noAsiste = !asiste;
         // Reemplazamos los parametros de sustitución por los valores del torneo actual
         const plantillaRellenada = plantillaString
@@ -38,7 +38,7 @@ function mostrarTorneos(torneos){
             .replace(/{{noAsiste}}/g, noAsiste)
             .replace(/{{idTorneo}}/g, torneo.id)
         ;
-        console.log(plantillaRellenada);
+        
         // Convertimos el string a un elemento html usando Jquery
         const torneoHtml = $(plantillaRellenada);
         torneoHtml.show();   // Anular display none de la plantilla
@@ -49,7 +49,41 @@ function mostrarTorneos(torneos){
     plantilla.remove();
 }
 
+function comprobarAsistencia(equipos, equipo){    
+    for(let i=0; i < equipos.length; i++){
+        const u = equipos[i];
+        if(u.equipos === equipo) {
+            return true;
+        }
+    }
+    return false;
+}
 
+function refrescarBotones(){
+    // Refrescar visibilidad de botones asistir
+    const botonesAsistir = $('.botonAsistir');
+    $.each(botonesAsistir, function(index, b) {
+        const button = $(b);
+        //button.data("showonstart") ? button.show() : button.hide();
+        const mostrar = button.data("showonstart");
+        if(mostrar){
+            button.show();
+        }else{
+            button.hide();
+        }
+    });
+    // Refrescar visibilidad de botones no asistir
+    const botonesNoAsistir = $('.botonNoAsistir');
+    $.each(botonesNoAsistir, function(index, b) {
+        const button = $(b);
+        const mostrar = button.data("showonstart");
+        if(mostrar){
+            button.show();
+        }else{
+            button.hide();
+        }
+    });
+}
 
 
 function asistirTorneo(idTorneo) {
