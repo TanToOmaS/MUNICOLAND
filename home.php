@@ -100,7 +100,7 @@ $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $que
 
         <div class="row grey darken-3">
             <h3 span class="tituloTorneo">EVENTOS DEL VIERNES 14 DE AGOSTO:</span>
-                <div class="col s12 m12 l12">
+                <div class="col s8 m8 l8">
                     <div class="carousel carousel-slider center">
 
                         <?php
@@ -126,7 +126,7 @@ $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $que
 
         <div class="row grey darken-3">
             <h3 span class="tituloTorneo">EVENTOS DEL SÁBADO 15 DE AGOSTO:</span>
-                <div class="col s12 m12 l12">
+                <div class="col s8 m8 l8">
                     <div class="carousel carousel-slider center">
 
                         <?php
@@ -152,7 +152,7 @@ $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $que
 
         <div class="row grey darken-3">
             <h3 span class="tituloTorneo">EVENTOS DEL DOMINGO 16 DE AGOSTO:</span>
-                <div class="col s12 m12 l12">
+                <div class="col s8 m8 l8">
                     <div class="carousel carousel-slider center">
                         <?php
 
