@@ -15,20 +15,6 @@ if (isset($username)) {
     header('Location:index.php');
 }
 
-$queryEventos14 = "SELECT * FROM eventos WHERE FECHA = '2020-08-14'";
-$queryEventos15 = "SELECT * FROM eventos WHERE FECHA = '2020-08-15'";
-$queryEventos16 = "SELECT * FROM eventos WHERE FECHA = '2020-08-16'";
-$queryAsistenciasUsuario = "SELECT EVENTO_ID
-FROM asiste
-WHERE USUARIO_ID = (
-	SELECT ID
-    FROM usuarios
-    WHERE USUARIO = '$username'
-)";
-$listaEventos14 = mysqli_query($conexion, $queryEventos14);
-$listaEventos15 = mysqli_query($conexion, $queryEventos15);
-$listaEventos16 = mysqli_query($conexion, $queryEventos16);
-$asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $queryAsistenciasUsuario), MYSQLI_NUM), 0);
 
 ?>
 
@@ -92,35 +78,35 @@ $asistenciasUsuario = array_column(mysqli_fetch_all(mysqli_query($conexion, $que
 
             <?php include "ocurriendo.php"; ?>
 
-        </div>      
+        </div>
 
         <h3 span class="tituloTorneo">EVENTOS DEL DÍA:</span></h3>
         <div id="contenedor-eventos" class="row grey darken-3">
-        <div id="plantilla-evento" class="col s3 m3 l3" style="display: none;">        
-            <div class="card orange lighten-1">
-                <div class="card-image">
-                    <img src="{{urlImagen}}">
-                    <span class="card-title">{{nombre}}</span>
-                    <button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light green botonAsistir" data-idevento="{{idEvento}}" data-showonstart="{{asiste}}" onclick="asistir('{{idEvento}}')">
-                        <i class="large material-icons">event_available</i>
-                    </button>
-                    <button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red botonNoAsistir" data-idevento="{{idEvento}}" data-showonstart="{{noAsiste}}" onclick="noAsistir('{{idEvento}}')">
-                        <i class="large material-icons">event_busy</i>
-                    </button>
-                </div>
-                <div class="card-content">
-                    <p class="black" style="font-size: 18px">
-                        EL {{fecha}} EN {{lugar}}
-                    </p>
+            <div id="plantilla-evento" class="col s3 m3 l3" style="display: none;">
+                <div class="card orange lighten-1">
+                    <div class="card-image">
+                        <img src="{{urlImagen}}">
+                        <span class="card-title">{{nombre}}</span>
+                        <button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light green botonAsistir" data-idevento="{{idEvento}}" data-showonstart="{{asiste}}" onclick="asistir('{{idEvento}}')">
+                            <i class="large material-icons">event_available</i>
+                        </button>
+                        <button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light red botonNoAsistir" data-idevento="{{idEvento}}" data-showonstart="{{noAsiste}}" onclick="noAsistir('{{idEvento}}')">
+                            <i class="large material-icons">event_busy</i>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <p class="black" style="font-size: 18px">
+                            EL {{fecha}} EN {{lugar}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 </body>
 
 
-    <!-- ZONA JAVASCRIPT: -->
+<!-- ZONA JAVASCRIPT: -->
 </div>
 <script type="text/javascript">
     const username = '<?php echo $username; ?>';
