@@ -1,3 +1,12 @@
+function get(url, success, error){
+  $.ajax({
+      type: "GET",
+      url: url,
+      success: success,
+      error: error
+  })
+}
+
 function post(url, data, success, error){
     $.ajax({
         type: "POST",
@@ -6,6 +15,16 @@ function post(url, data, success, error){
         success: success,
         error: error
     })
+}
+
+function deleteRequest(url, data, success, error){
+  $.ajax({
+      type: "DELETE",
+      url: url,
+      data: data,
+      success: success,
+      error: error
+  })
 }
 
 function toast(tipo, mensaje){

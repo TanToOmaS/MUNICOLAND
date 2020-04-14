@@ -2,15 +2,19 @@
 
 include_once("RepositorioBase.php");
 include_once("RepositorioEquipo.php");
+include_once("RepositorioRonda.php");
 include_once("../modelo/torneo.php");
+include_once("../util/constantes.php");
 
 class RepositorioTorneo extends RepositorioBase {
 
     private $repositorioEquipo;
+    private $repositorioRonda;
 
     function __construct()
     {
         $this->repositorioEquipo = new RepositorioEquipo();
+        $this->repositorioRonda = new RepositorioRonda();
         parent::__construct();
     }
 
@@ -27,15 +31,29 @@ class RepositorioTorneo extends RepositorioBase {
                 $equipo = $this->repositorioEquipo->obtenerEquipo($idEquipo);
                 array_push($equipos, $equipo);
             }
-            $torneo->equipos = $equipos;    
-            //var_dump($torneo);die();
-            //Cargar rondas
-            //Cargar equipos
+            $torneo->equipos = $equipos;
+            $rondas = $this->repositorioRonda->obtenerRondas($torneo->id);
+            $torneo->rondas = $rondas;
+            //Cargar enfrentamientos/rondas
             array_push($torneos, $torneo);
         }
         
         //var_dump($torneos);die();
         return $torneos;
+    }
+
+    function registrarParticipacion($idEquipo, $idTorneo){
+        $query = $this->db->prepare("INSERT INTO equipos_torneos VALUES (?, ?)");
+        $query->bindParam(1, $idEquipo, PDO::PARAM_INT);
+        $query->bindParam(2, $idTorneo, PDO::PARAM_INT);
+        return $query->execute();
+    }
+
+    function eliminarParticipacion($idEquipo, $idTorneo){
+        $query = $this->db->prepare("DELETE FROM equipos_torneos WHERE ET_EQ_ID = ? AND ET_T_ID = ?");
+        $query->bindParam(1, $idEquipo, PDO::PARAM_INT);
+        $query->bindParam(2, $idTorneo, PDO::PARAM_INT);
+        return $query->execute();
     }
 
     private function cargarEquiposParticipantes($idTorneo) {
@@ -44,6 +62,10 @@ class RepositorioTorneo extends RepositorioBase {
 		$query->execute();
 		$idsEquipos = $query->fetchAll(PDO::FETCH_COLUMN);
         return $idsEquipos;
+    }
+
+    private function obtenerUrlCompleta($url){
+        return Constantes::URL_BASE . $url;
     }
 
     private function aTorneo($torneoDb){
@@ -57,7 +79,10 @@ class RepositorioTorneo extends RepositorioBase {
             $torneoDb["NUM_CONTRINCANTES"],
             $torneoDb["INICIO_INSCRIP"],
             $torneoDb["FIN_INSCRIP"],
-            $torneoDb["LIMITE_EQUIPOS"]
+            $torneoDb["LIMITE_EQUIPOS"],
+            $this->obtenerUrlCompleta($torneoDb["IMAG1"]),
+            $this->obtenerUrlCompleta($torneoDb["IMAG2"]),
+            $this->obtenerUrlCompleta($torneoDb["IMAG3"])
         );
     }
 }

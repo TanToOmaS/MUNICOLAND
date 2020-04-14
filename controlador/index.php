@@ -1,11 +1,20 @@
 <?php
 
 //SESSION STUFF FOR SAVING DATA ON $_SESSION
-//session_start();
+session_start();
 
 require_once('router.php');
 $router = new AltoRouter();
 $router->setBasePath('/MUNICOLAND/controlador');
+
+function getUsername() {
+    $username =  $_SESSION['user'] ?? null;
+    if($username == null){
+        http_response_code(401);
+        die();
+    }
+    return $username;
+}
 
 //MAPPINGS
 //TORNEOS
@@ -15,12 +24,40 @@ $router->map('GET', '/torneos', function() {
     $controlador->obtenerTorneos();
 }, 'torneos_obtener');
 
-//$router->map('GET', '/premises/[i:premises_id]/articles', function() {
-//    require('Articles/GetArticles.php');
-//}, '_articles');
+$router->map('POST', '/torneos/[i:id_torneo]/participacion', function($idTorneo) {
+    include_once('ControladorTorneos.php');
+    $controlador = new ControladorTorneos();
+    $controlador->registrarParticipacion(getUsername(), $idTorneo, true);
+}, 'torneos_participar');
+
+$router->map('DELETE', '/torneos/[i:id_torneo]/participacion', function($idTorneo) {
+    include_once('ControladorTorneos.php');
+    $controlador = new ControladorTorneos();
+    $controlador->registrarParticipacion(getUsername(), $idTorneo, false);
+}, 'torneos_no_participar');
+
+
+//EVENTOS
+$router->map('GET', '/eventos', function() {
+    include_once('ControladorEventos.php');
+    $controlador = new ControladorEventos();
+    $controlador->obtenerEventos();
+}, 'eventos_obtener');
+
+$router->map('POST', '/eventos/[i:id_evento]/asistencia', function($idEvento) {
+    include_once('ControladorEventos.php');
+    $controlador = new ControladorEventos();
+    $controlador->registrarAsistencia(getUsername(), $idEvento, true);
+}, 'eventos_asistir');
+
+$router->map('DELETE', '/eventos/[i:id_evento]/asistencia', function($idEvento) {
+    include_once('ControladorEventos.php');
+    $controlador = new ControladorEventos();
+    $controlador->registrarAsistencia(getUsername(), $idEvento, false);
+}, 'eventos_no_asistir');
+
 
 $match = $router->match();
-
 
 if ($match && is_callable($match['target'])) {
     //$_SESSION['params'] = $match['params'];

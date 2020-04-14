@@ -45,6 +45,7 @@ $user = new User();
                 </form>
         </div>               
     </div>    
+
   </body>
 </html>
 
