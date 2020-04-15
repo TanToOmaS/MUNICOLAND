@@ -90,9 +90,9 @@ function mostrarEventos(eventos) {
     const plantillaString = plantilla.prop('outerHTML');    // Convertimos el elemento html a string
     const plantillaTituloDiaString = plantillaTituloDia.prop('outerHTML');
     const eventosAgrupados = agruparEventosPorDia(eventos);
-    console.log(typeof eventosAgrupados);
+    
     for (const fechaInicio in eventosAgrupados) {
-        const contenedorFecha = $('<div class="row grey darken-3"></div>');
+        const contenedorFecha = $('<div class="row "></div>');
         const plantillaTituloDiaRellenada = plantillaTituloDiaString.replace(/{{fecha}}/g, fechaInicio);
         const plantillaHtml = $(plantillaTituloDiaRellenada);
         plantillaHtml.show();
