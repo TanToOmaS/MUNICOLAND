@@ -22,11 +22,11 @@ while ($result = mysqli_fetch_assoc($eventoActual)) {
 <div class="row grey darken-3">
     <h3 span class="tituloTorneo">PRÓXIMOS EVENTOS:</span></h3>
     <div class="col s8 m8 l8">
-        <div class="carousel carousel-slider center">
+        <div id="contenedor-proximos-eventos" class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
                 <a class="btn waves-effect teal lighten-2 white-text darken-text-2">ME PUNTO</a>
             </div>
-            <div class="carousel-item white-text">
+            <div id="plantilla-proximo-evento" class="carousel-item white-text">
                 <h2>{{nombre}}</h2>
                 <p class="white-text">EL {{fecha}} EN {{lugar}}</p>
                 <img src="{{urlImagen}}">

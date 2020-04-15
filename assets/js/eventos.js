@@ -2,19 +2,85 @@ $(document).ready(function() {
     cargarEventos();
 });
 
+function parsearEventos(response){
+    const eventosJson = JSON.parse(response);
+    return eventosJson.map(function(evento){
+        evento.fechaInicio = stringToDatetime(evento.fechaInicio);
+        evento.fechaFin = stringToDatetime(evento.fechaFin);
+        return evento;
+    });
+}
+
 function cargarEventos(){
     const url = 'http://localhost/municoland/controlador/eventos';
     get(
         url,
         response => {
-            const eventos = JSON.parse(response);
+            const eventos = eliminarEventosAntiguos(parsearEventos(response));
             mostrarEventos(eventos);
+            mostrarProximosEventos(filtrarYOrdenarEventosProximos(eventos, 3));
+            inicializarCarousel();
             refrescarBotones();
         },
         error => {
             console.error('Error al cargar los eventos', error);
         }
     );
+}
+
+function inicializarCarousel(){
+    const carousel = $('.carousel');
+    M.Carousel.init(carousel, {
+        duration: 300,
+        indicators: true,
+        fullWidth: true
+    });
+    
+    carousel.carousel();
+    setInterval(function() {
+        carousel.carousel('next');
+    }, 4500);
+}
+
+function eliminarEventosAntiguos(eventos){
+    const hoy = new Date();
+    return eventos.filter(function(evento){
+        return (hoy.getTime() - evento.fechaInicio.getTime()) < 0;
+    });
+}
+
+function filtrarYOrdenarEventosProximos(eventos, limite){
+    const ordenados = eventos.sort(function(a, b) {
+        return a.fechaInicio - b.fechaInicio;
+    });
+    return ordenados.splice(0, limite);
+}
+
+function mostrarProximosEventos(eventos){
+    const contenedor = $('#contenedor-proximos-eventos');
+    const plantilla = $('#plantilla-proximo-evento');
+    const plantillaString = plantilla.prop('outerHTML');    // Convertimos el elemento html a string
+    $.each(eventos, function(i, evento) {
+        const asiste = comprobarAsistencia(evento.usuarios, username);
+        const noAsiste = !asiste;
+        // Reemplazamos los parametros de sustitución por los valores del evento actual
+        const plantillaRellenada = plantillaString
+            .replace(/{{urlImagen}}/g, evento.imagen)
+            .replace(/{{nombre}}/g, evento.nombre)
+            //.replace(/{{idEvento}}/g, evento.id)
+            //.replace(/{{noAsiste}}/g, asiste)
+            //.replace(/{{asiste}}/g, noAsiste)
+            .replace(/{{fecha}}/g, evento.fechaInicio.toLocaleString())
+            .replace(/{{lugar}}/g, evento.lugar)
+        ;
+        // Convertimos el string a un elemento html usando Jquery
+        const eventHtml = $(plantillaRellenada);
+        eventHtml.show();   // Anular display none de la plantilla
+        eventHtml.removeAttr('id');
+        // Insertar plantilla en DOM
+        contenedor.append(eventHtml);
+    });
+    plantilla.remove();
 }
 
 function mostrarEventos(eventos){
@@ -31,7 +97,7 @@ function mostrarEventos(eventos){
             .replace(/{{idEvento}}/g, evento.id)
             .replace(/{{noAsiste}}/g, asiste)
             .replace(/{{asiste}}/g, noAsiste)
-            .replace(/{{fecha}}/g, evento.fecha)
+            .replace(/{{fecha}}/g, evento.fechaInicio)
             .replace(/{{lugar}}/g, evento.lugar)
         ;
         // Convertimos el string a un elemento html usando Jquery

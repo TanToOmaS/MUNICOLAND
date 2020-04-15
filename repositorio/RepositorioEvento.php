@@ -2,15 +2,18 @@
 
 include_once("RepositorioBase.php");
 include_once("RepositorioUsuario.php");
+include_once("../servicio/ServicioFecha.php");
 include_once("../modelo/evento.php");
 
 class RepositorioEvento extends RepositorioBase {
 
     private $repositorioUsuario;
+    private $servicioFecha;
 
     function __construct()
     {
         $this->repositorioUsuario = new RepositorioUsuario();
+        $this->servicioFecha = new ServicioFecha();
         parent::__construct();
     }
 
@@ -65,7 +68,8 @@ class RepositorioEvento extends RepositorioBase {
     private function aEvento($eventoDb){
         return new Evento(
             $eventoDb["ID"],
-            $eventoDb["FECHA"],
+            $this->servicioFecha->stringToDatetime($eventoDb["FECHA_INICIO"]),
+            $this->servicioFecha->stringToDatetime($eventoDb["FECHA_FIN"]),
             $eventoDb["EVENTO"],
             $eventoDb["LUGAR"],
             $eventoDb["IMAGEN"],

@@ -112,36 +112,19 @@ if (isset($username)) {
     const username = '<?php echo $username; ?>';
 </script>
 <script type="text/javascript" src="assets/js/util.js"></script>
+<script type="text/javascript" src="assets/js/fechas.js"></script>
 <script type="text/javascript" src="assets/js/eventos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script type="text/javascript" src="util.js"></script>
-<script type="text/javascript" src="botonesAsistir.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript">
 
-<!-- Script para carousel -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.carousel');
-        var instances = M.Carousel.init(elems, {
-            duration: 300,
-            indicators: true,
-            fullWidth: true
-        });
+$(document).ready(function() {
+    $(".dropdown-trigger").dropdown({
+        hover: true
     });
-    $('.carousel').carousel();
-    setInterval(function() {
-        $('.carousel').carousel('next');
-    }, 4500);
-    $(document).ready(function() {
-        $(".dropdown-trigger").dropdown({
-            hover: true
-        });
-    });
+});
 </script>
 
 </html>

@@ -4,7 +4,8 @@ class Evento
 {
 
     public $id;
-    public $fecha;
+    public $fechaInicio;
+    public $fechaFin;
     public $nombre;
     public $lugar;
     public $imagen;
@@ -12,14 +13,16 @@ class Evento
 
     function __construct(
         $id,
-        $fecha,
+        $fechaInicio,
+        $fechaFin,
         $nombre,
         $lugar,
         $imagen,
         $usuarios
     ) {
         $this->id = $id;
-        $this->fecha = $fecha;
+        $this->fechaInicio = $fechaInicio;
+        $this->fechaFin = $fechaFin;
         $this->nombre = $nombre;
         $this->lugar = $lugar;
         $this->imagen = $imagen;
