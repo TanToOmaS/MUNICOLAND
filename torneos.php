@@ -62,24 +62,6 @@ if (isset($username)) {
 
             <?php include "ocurriendo.php"; ?>
 
-<<<<<<< HEAD
-    <div class="mostrarEvento">    
-    <div class="card horizontal grey darken-3">
-            <div class="card-image">
-         <img src="<?php echo  $fila['IMAG1'] ?>"> 
-            </div>
-            <div class="card-image">
-         <img src="<?php echo  $fila['IMAG2'] ?>">
-            </div>            
-            <div class="card-image">
-         <img src="<?php echo  $fila['IMAG3'] ?>">  
-            </div>
-        <div class="card-stacked">
-        <div class="card-content">
-        <h3><span class="tituloTorneo"><?php echo  $fila['TORNEO']. ": " ?></span></h3>
-        <p><span class="descripTorneo"><?php echo " EL TORNEO DE " . $fila['TORNEO']. " COMENZARÁ EL " . $fila['FECHA'] . " A LAS " . $fila['HORA'] . "</br></br>" . $fila['DESCRIPCION']; ?></p>               
-=======
->>>>>>> master
         </div>
         <div id="contenedor-torneos" class="row">
 

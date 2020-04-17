@@ -17,7 +17,7 @@ function cargarEventos() {
         url,
         response => {
             const eventos = eliminarEventosAntiguos(parsearEventos(response));
-            mostrarEventos(eventos);
+            mostrarEventos(OrdenarEventos(eventos));
             mostrarProximosEventos(filtrarYOrdenarEventosProximos(eventos, 3));
             inicializarCarousel();
             refrescarBotones();
@@ -56,6 +56,13 @@ function filtrarYOrdenarEventosProximos(eventos, limite) {
     return ordenados.splice(0, limite);
 }
 
+function OrdenarEventos(eventos) {
+    const ordenados = eventos.sort(function (a, b) {
+        return a.fechaInicio - b.fechaInicio;
+    });
+    return ordenados;
+}
+
 function mostrarProximosEventos(eventos) {
     const contenedor = $('#contenedor-proximos-eventos');
     const plantilla = $('#plantilla-proximo-evento');
@@ -70,7 +77,7 @@ function mostrarProximosEventos(eventos) {
             //.replace(/{{idEvento}}/g, evento.id)
             //.replace(/{{noAsiste}}/g, asiste)
             //.replace(/{{asiste}}/g, noAsiste)
-            .replace(/{{fecha}}/g, evento.fechaInicio.toLocaleString())
+            .replace(/{{fecha}}/g, evento.fechaInicio.toLocaleString("es-ES"))
             .replace(/{{lugar}}/g, evento.lugar)
             ;
         // Convertimos el string a un elemento html usando Jquery
@@ -87,7 +94,7 @@ function mostrarEventos(eventos) {
     const contenedor = $('#contenedor-eventos');
     const plantilla = $('#plantilla-evento');
     const plantillaTituloDia = $('#plantilla-eventos-dia');
-    const plantillaString = plantilla.prop('outerHTML');    // Convertimos el elemento html a string
+    const plantillaString = plantilla.prop('outerHTML');  // Convertimos el elemento html a string
     const plantillaTituloDiaString = plantillaTituloDia.prop('outerHTML');
     const eventosAgrupados = agruparEventosPorDia(eventos);
     
@@ -109,8 +116,9 @@ function mostrarEventos(eventos) {
                 .replace(/{{idEvento}}/g, evento.id)
                 .replace(/{{noAsiste}}/g, asiste)
                 .replace(/{{asiste}}/g, noAsiste)
-                .replace(/{{fecha}}/g, evento.fechaInicio)
+                .replace(/{{fecha}}/g, evento.fechaInicio.toLocaleString("es-ES"))
                 .replace(/{{lugar}}/g, evento.lugar)
+                .replace(/{{descrip}}/g, evento.descripcion)
                 ;
             // Convertimos el string a un elemento html usando Jquery
             const eventHtml = $(plantillaRellenada);

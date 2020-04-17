@@ -71,8 +71,9 @@ class RepositorioEvento extends RepositorioBase {
             $this->servicioFecha->stringToDatetime($eventoDb["FECHA_INICIO"]),
             $this->servicioFecha->stringToDatetime($eventoDb["FECHA_FIN"]),
             $eventoDb["EVENTO"],
+            $eventoDb["DESCRIPCION"],
             $eventoDb["LUGAR"],
-            $eventoDb["IMAGEN"],
+            $eventoDb["IMAGEN"], 
             null
         );
     }
