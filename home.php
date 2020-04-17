@@ -53,8 +53,7 @@ if (isset($username)) {
     <div class="container">
         <header>
             <nav>
-                <div class="nav-wrapper orange darken-2">
-                    <a href="home.php" class="brand-logo right">MUÑICOLAND</a>
+                <div class="nav-wrapper orange darken-2">                   
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
                         <li><a href="home.php"><span class="tiny material-icons">home</span> EL PUEBLO</a></li>
                         <li><a href="#"><span class="tiny material-icons">local_bar</span> FIESTAS</a></li>
@@ -69,7 +68,7 @@ if (isset($username)) {
 
 
         <div id="pueblo">
-            <h1 id="homehead">MUÑICOLAND</h1>
+            <h1 class="cabecera">MUÑICOLAND</h1>
         </div>
         <!-- <div id="Municontundence">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTikitikisummertime%2F&tabs=timeline&width=340&height=700&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=489868141175282" width="340" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>

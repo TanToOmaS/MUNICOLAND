@@ -232,6 +232,7 @@ height: 268px;
 	transform: rotate(-5deg);
 	position: relative;
 	top: -20px;
+	text-shadow: texto3d(30, #111)
 }
 
 .degradado {
@@ -323,7 +324,6 @@ table#puntuaciones tr:hover {
 
 h1 {
 	text-shadow: texto3d(30, #111)
-
 
 }
 
@@ -474,7 +474,7 @@ section {
 		float:right;
 		font-size:40px;
 	}
-	
+}
 // 	/* Customize the label (the container) */
 // .container {
 //   display: block;

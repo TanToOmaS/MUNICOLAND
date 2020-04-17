@@ -88,7 +88,7 @@ if (isset($username)) {
       </ul>
   </div>
 
-  <div class="brackets" style="float:left; width: 20%">
+  <div class="brackets" style="float:left; position:relative; width: 20%; top:18em">
     <ul class="collection with-header">        
         <li class="collection-item teal lighten-2">EQUIPO 1</li>
         <li class="collection-item teal lighten-2">EQUIPO 2</li>
@@ -104,7 +104,7 @@ if (isset($username)) {
       </ul>
   </div>
 
-  <div class="brackets" style="float:left; width: 20%">
+  <div class="brackets" style="float:left; position:relative; width: 20%; top:25.2em">
     <ul class="collection with-header">        
         <li class="collection-item teal lighten-2">EQUIPO 1</li>
         <li class="collection-item teal lighten-2">EQUIPO 2</li>
@@ -114,7 +114,7 @@ if (isset($username)) {
       </ul>
   </div>
 
-  <div class="brackets" style="float:left; width: 20%">
+  <div class="brackets" style="float:left; position:relative; width: 20%; top:29em">
     <ul class="collection with-header">        
         <li class="collection-item teal lighten-2">EQUIPO 1</li>
         <li class="collection-item teal lighten-2">EQUIPO 2</li>                           

@@ -13,7 +13,12 @@ ini_set('error_reporting', E_ALL);
 <html lang = 'ES'>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+     <!-- Materialize icons -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize minified CSS -->
+    <link rel="stylesheet" type="text/css" href="materialize/css/materialize.css">
     <style>
         body {background-color: #000;}
     </style>
@@ -34,32 +39,28 @@ $PASSWORD = $_POST["PASSWORD"];
 
  ?>
 
-    <div id="general">
-        <h1 align="center">¡REGÍSTRATE PARA ENTRAR!</h1>    
-        <div id="escudo" align="center"><img width="200" height="133" hspace="20" src="index/banderaavila.png"> <img align="center" width="150" height="268" hspace="20" src="index/escudopueblo.jpg"><img width="200" height="133" hspace="20" src="index/banderaspain.png"></div>                
+    <div id="home">
+        <h1 class="bienvenido">¡REGÍSTRATE PARA ENTRAR!</h1>    
+        <div id="escudo"><img class="boxshadow" width="200" height="133" hspace="20" src="index/banderaavila.png"> <img class="boxshadow" width="150" height="268" hspace="20" src="index/escudopueblo.jpg"><img class="boxshadow" width="200" height="133" hspace="20" src="index/banderaspain.png"></div>                
         <hr style="color: #0056b2;"/>
-        <div class="logintitulo" align="center">CREA UNA CUENTA:</div>
-        <p align="center" style="color: white">O PINCHA <a href="index.php">AQUÍ</a> PARA INICIAR SESION</p>
+        <div class="logintitulo">CREA UNA CUENTA:
+        <p>O PINCHA <a href="index.php">AQUÍ</a> PARA INICIAR SESION</p>
+        </div>
             <hr style="color: #0056b2;"/>
             <br>
                 <form action="registro.php" method="post" class="formlogin">            
-                <input type="text" placeholder="USUARIO" name="USUARIO"/>            
-                <br>
-                <br>            
-                <input type="text" placeholder="NOMBRE" name="NOMBRE"/>            
-                <br>
-                <br>            
-                <input type="text" placeholder="APELLIDO" name="APELLIDO"/>           
-                <br>
-                <br>            
-                <input type="email" placeholder="EMAIL" name="EMAIL"/>            
-                <br>
-                <br>
-                <input type="password" placeholder="PASSWORD" name="PASSWORD"/>
-                <br>
-                <br>
+                <input class="grey darken-4" type="text" placeholder="USUARIO" name="USUARIO"/>            
+                <br>                           
+                <input class="grey darken-4" type="text" placeholder="NOMBRE" name="NOMBRE"/>            
+                <br>                           
+                <input class="grey darken-4" type="text" placeholder="APELLIDO" name="APELLIDO"/>           
+                <br>                           
+                <input class="grey darken-4" type="email" placeholder="EMAIL" name="EMAIL"/>            
+                <br>                
+                <input class="grey darken-4" type="password" placeholder="PASSWORD" name="PASSWORD"/>
+                <br>                
                 <div class="button">
-                <button type="submit" name="CREAR"><b>CREAR<b></button>
+                <button class="btn waves-effect waves-light" type="submit" name="CREAR">CREAR<i class="material-icons right">send</i></button>
                 </div>    
                 </form>
         </div>
