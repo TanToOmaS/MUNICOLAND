@@ -32,7 +32,7 @@ function inicializarCarousel() {
     const carousel = $('.carousel');
     M.Carousel.init(carousel, {
         duration: 300,
-        indicators: true,
+        indicators: false,
         fullWidth: true
     });
 
@@ -66,7 +66,7 @@ function OrdenarEventos(eventos) {
 function mostrarProximosEventos(eventos) {
     const contenedor = $('#contenedor-proximos-eventos');
     const plantilla = $('#plantilla-proximo-evento');
-    const plantillaString = plantilla.prop('outerHTML');    // Convertimos el elemento html a string
+    const plantillaString = plantilla.prop('outerHTML');  // Convertimos el elemento html a string
     $.each(eventos, function (i, evento) {
         const asiste = comprobarAsistencia(evento.usuarios, username);
         const noAsiste = !asiste;
@@ -79,6 +79,7 @@ function mostrarProximosEventos(eventos) {
             //.replace(/{{asiste}}/g, noAsiste)
             .replace(/{{fecha}}/g, evento.fechaInicio.toLocaleString("es-ES"))
             .replace(/{{lugar}}/g, evento.lugar)
+            .replace(/{{descrip}}/g, evento.descripcion)
             ;
         // Convertimos el string a un elemento html usando Jquery
         const eventHtml = $(plantillaRellenada);

@@ -1,11 +1,12 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
-  font-family: 'HURTMOLD_';
+  font-family: 'Roboto', sans-serif;
 }
 
 p {
-  font-family: 'HURTMOLD_';
+  font-family: 'Roboto', sans-serif;
   color: #fff;
 }
 
@@ -26,11 +27,11 @@ p {
   padding-top: 20px;
   text-align: center;
   background-color: transparent;
-  font-family: 'HURTMOLD_';
+  font-family: 'Roboto', sans-serif;
 }
 
 .logintitulo {
-  font-family: ARIAL;
+  font-family: 'Roboto', sans-serif;
   font-size: 32px;
   text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   color: #fff;
@@ -79,7 +80,7 @@ p {
 }
 
 .tituloTorneo {
-  font-family: Arial;
+  font-family: 'Roboto', sans-serif;
   font-size: 40px;
   COLOR: rgba(247, 178, 52, 0.993);
   text-shadow: 0px 0px 9px rgba(247, 178, 52, 0.993);
@@ -245,12 +246,12 @@ td, tr, th {
   background-color: #FF5733;
 }
 
-#eventos {
-  border-radius: 3px;
+.eventos {
   border-style: solid;
   margin: 0px auto;
   background-color: #000;
-  width: 100%;
+  width: auto;
+  height: auto;
 }
 
 #caratula {
@@ -304,8 +305,10 @@ h1 {
 }
 
 h2 {
-  font-size: 36px;
-  font-family: 'ARIAL';
+  font-size: 46px;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 1px 1px #111, 1px 1px #111, 2px 2px #111, 3px 3px #111, 4px 4px #111, 5px 5px #111, 6px 6px #111, 7px 7px #111, 8px 8px #111, 9px 9px #111, 10px 10px #111;
+  color: white;
 }
 
 .evenParrafo {

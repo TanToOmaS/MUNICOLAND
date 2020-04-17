@@ -73,7 +73,7 @@ if (isset($username)) {
         <!-- <div id="Municontundence">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTikitikisummertime%2F&tabs=timeline&width=340&height=700&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=489868141175282" width="340" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
         </div> -->
-        <div id='eventos'>
+        <div class="eventos">
 
             <?php include "ocurriendo.php"; ?>
 

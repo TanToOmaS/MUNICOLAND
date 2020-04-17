@@ -1,5 +1,7 @@
 // FUENTE DE TÍTULOS H1
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 // FUNCION PARA CREAR SOMBRA EN LOS TEXTOS:
 
@@ -26,12 +28,12 @@
 
 * {
 	
-	font-family: 'HURTMOLD_';
+	font-family: 'Roboto', sans-serif;
 	
 }
 
 p {
-	font-family: 'HURTMOLD_';
+	font-family: 'Roboto', sans-serif;
 	color: #fff;
 }
 
@@ -53,11 +55,11 @@ p {
 	padding-top: 20px;	
 	text-align: center;
 	background-color: transparent;
-	font-family: 'HURTMOLD_';	
+	font-family: 'Roboto', sans-serif;	
 }
 
 .logintitulo{
-	font-family: ARIAL;
+	font-family: 'Roboto', sans-serif;
 	font-size: 32px;
 	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 	color:#fff;	
@@ -107,7 +109,7 @@ font-size: 18px;
 }
 .tituloTorneo{		
 	
-	font-family: Arial; 
+	font-family: 'Roboto', sans-serif; 
 	font-size: 40px; 
 	COLOR:  rgba(247, 178, 52, 0.993); 
 	text-shadow: 0px 0px 9px rgba(247, 178, 52, 0.993);
@@ -274,13 +276,14 @@ height: 268px;
 	background-color:#FF5733;
 }
 
-#eventos{
+.eventos{	
 	
-	border-radius: 3px;
 	border-style: solid;
 	margin: 0px auto;
 	background-color: #000;
-	width: 100%;
+	width: auto;
+	height: auto;
+
 	
 }
 
@@ -345,9 +348,12 @@ text-shadow: 2px 0 0 #000,
 
 
 h2 {
-font-size: 36px;
-font-family: 'ARIAL';
+font-size: 46px;
+font-family: 'Roboto', sans-serif;
+text-shadow: texto3d(10,#111 );
+color: white;
 }
+
 .evenParrafo{
 
 	font-size: 12px;
