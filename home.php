@@ -79,15 +79,13 @@ if (isset($username)) {
             <?php include "ocurriendo.php"; ?>
 
         </div>
-
-        <h3 span class="tituloTorneo">EVENTOS DEL DÍA:</span></h3>
+        
         <div id="contenedor-eventos">
-            <h3 id="plantilla-eventos-dia" class="tituloTorneo" style="display: none;">Eventos del {{fecha}}</h3>
+            <h3 id="plantilla-eventos-dia" class="tituloTorneo" style="display: none;">EVENTOS DEL DÍA {{fecha}}</h3>
             <div id="plantilla-evento" class="col s3 m3 l3" style="display: none;">
                 <div class="card orange lighten-1">
                     <div class="card-image">
-                        <img src="{{urlImagen}}">
-                        <span class="card-title">{{nombre}}</span>
+                        <img src="{{urlImagen}}">                        
                         <button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light green botonAsistir" data-idevento="{{idEvento}}" data-showonstart="{{asiste}}" onclick="asistir('{{idEvento}}')">
                             <i class="large material-icons">event_available</i>
                         </button>
@@ -96,6 +94,7 @@ if (isset($username)) {
                         </button>
                     </div>
                     <div class="card-content">
+                    <span class="card-title white-text">{{nombre}}</span>
                         <p class="black" style="font-size: 18px">
                             EL {{fecha}} EN {{lugar}}
                         </p>

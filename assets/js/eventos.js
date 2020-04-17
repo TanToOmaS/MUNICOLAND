@@ -92,7 +92,7 @@ function mostrarEventos(eventos) {
     const eventosAgrupados = agruparEventosPorDia(eventos);
     
     for (const fechaInicio in eventosAgrupados) {
-        const contenedorFecha = $('<div class="row "></div>');
+        const contenedorFecha = $('<div class="row grey darken-3"></div>');
         const plantillaTituloDiaRellenada = plantillaTituloDiaString.replace(/{{fecha}}/g, fechaInicio);
         const plantillaHtml = $(plantillaTituloDiaRellenada);
         plantillaHtml.show();
