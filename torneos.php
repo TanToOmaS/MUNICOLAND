@@ -51,9 +51,6 @@ if (isset($username)) {
                 <li><a href="logout.php"><span class="tiny material-icons">exit_to_app</span>CERRAR SESIÓN</a></li>
             </ul>
         </nav>
-<<<<<<< HEAD
-    </header>
-=======
     </header> 
     
 <div id="home">
@@ -66,18 +63,6 @@ if (isset($username)) {
 <?php include "ocurriendo.php"; ?>
     
 </div>
-<div class="row">
-<?php
-
-$queryTorneo = "SELECT * FROM torneos ORDER BY FECHA ASC";
-$queryAsistenciasTorneo = "SELECT ID_TORNEO
-FROM participa
-WHERE ID_USUARIO = (
-	SELECT ID
-    FROM usuarios
-    WHERE USUARIO = '$username'
-)";
->>>>>>> textcss
 
     <div id="home">
         <div id="pueblo">
