@@ -29,9 +29,9 @@ function deleteRequest(url, data, success, error){
 
 function toast(tipo, mensaje){
     const Toast = Swal.mixin({
-        toast: true,
+        toast: true,       
         position: 'center',
-        timer: 1700,
+        timer: 2000,
         showConfirmButton: false,
         timerProgressBar: true
       });

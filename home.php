@@ -29,6 +29,8 @@ if (isset($username)) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize minified CSS -->
     <link rel="stylesheet" type="text/css" href="materialize/css/materialize.css">
+    <!-- SweetAlert CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/sweetalert2.min.css"> -->
     <script src="jquery-3.4.1.min.js"></script>
     <style>
         body {
@@ -102,7 +104,7 @@ if (isset($username)) {
                 </div>
             </div>
         </div>
-
+    </div>
 </body>
 
 
@@ -115,6 +117,7 @@ if (isset($username)) {
 <script type="text/javascript" src="assets/js/fechas.js"></script>
 <script type="text/javascript" src="assets/js/eventos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 

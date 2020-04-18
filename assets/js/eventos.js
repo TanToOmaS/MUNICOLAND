@@ -74,9 +74,9 @@ function mostrarProximosEventos(eventos) {
         const plantillaRellenada = plantillaString
             .replace(/{{urlImagen}}/g, evento.imagen)
             .replace(/{{nombre}}/g, evento.nombre)
-            //.replace(/{{idEvento}}/g, evento.id)
-            //.replace(/{{noAsiste}}/g, asiste)
-            //.replace(/{{asiste}}/g, noAsiste)
+            .replace(/{{idEvento}}/g, evento.id)
+            .replace(/{{noAsiste}}/g, asiste)
+            .replace(/{{asiste}}/g, noAsiste)
             .replace(/{{fecha}}/g, evento.fechaInicio.toLocaleString("es-ES"))
             .replace(/{{lugar}}/g, evento.lugar)
             .replace(/{{descrip}}/g, evento.descripcion)
@@ -214,6 +214,6 @@ function noAsistir(idEvento) {
             botonNoAsistir.hide();
             toast('warning', '!Qué pena!');
         },
-        () => toast('error', 'Ha habido un error')
+        () => toast('error',  'Ha habido un error')
     )
 }

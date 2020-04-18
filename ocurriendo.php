@@ -14,14 +14,19 @@ echo "<h3 id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastel
 
 <div class="grey darken-3">
     <h3 span class="tituloTorneo">PRÓXIMOS EVENTOS:</span></h3>
+    <hr>
     <div class="col s12 m12 l12">
         <div id="contenedor-proximos-eventos" class="carousel carousel-slider center" style="height: 600px">
             <div class="carousel-item" id="plantilla-proximo-evento">
                 <h2>{{nombre}}</h2>
-                <p class="white-text">EL {{fecha}} EN {{lugar}} <br> {{descrip}}</p>
+                <p class="black orange-text fechaHoraEventos">EL {{fecha}} EN {{lugar}}</p>                  
+                <p class="white-text">{{descrip}}</p>
                 <a href=""><img src="{{urlImagen}}"></a>
                 <div class="carousel-fixed-item center">
-                    <a class="btn waves-effect teal lighten-2 white-text darken-text-2">ME PUNTO</a>
+                    <a class="btn waves-effect green white-text darken-text-2 botonAsistir" 
+                    data-idevento="{{idEvento}}" data-showonstart="{{asiste}}" onclick="asistir('{{idEvento}}')">ME PUNTO</a>
+                    <a class="btn waves-effect red white-text darken-text-2 botonNoAsistir"
+                    data-idevento="{{idEvento}}" data-showonstart="{{noAsiste}}" onclick="noAsistir('{{idEvento}}')">NO VOY</a>
                 </div>
             </div>
         </div>
