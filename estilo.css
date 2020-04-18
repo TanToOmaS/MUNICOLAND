@@ -124,7 +124,7 @@ div#general {
 }
 
 div#home {
-  margin: 3px auto;
+  margin: 15px auto;
   width: 80%;
   background-color: #FF5733;
 }
@@ -218,7 +218,7 @@ td, tr, th {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0px auto;
+  margin: 0 auto;
   background: url(https://media2.clubrural.com/img990x400/pueblos/avila/munico/20160218223336-avila-munico.jpg);
   width: 100%;
   height: 220px;

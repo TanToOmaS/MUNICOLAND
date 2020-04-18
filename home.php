@@ -53,22 +53,9 @@ if (isset($username)) {
     </ul> -->
 
     <div class="container">
-
-        <header>
-            <nav>
-                <div class="nav-wrapper orange darken-2 barraNav">                   
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li><a href="home.php"><span class="tiny material-icons">home</span> EL PUEBLO</a></li>
-                        <li><a href="#"><span class="tiny material-icons">local_bar</span> FIESTAS</a></li>
-                        <li><a class="dropdown-trigger" href="torneos.php" data-target="dropdown1"><span class="material-icons">videogame_asset</span> TORNEOS</a></li>
-                        <li><a href="#"><span class="tiny material-icons">book</span> AZRAEL</a></li>
-                        <li><a href="#"><span class="tiny material-icons">live_tv</span> MULTIMEDIA</a></li>
-                        <li><a href="logout.php"><span class="tiny material-icons">exit_to_app</span> CERRAR SESIÓN</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
+        <header> <?php include_once "navbar.php";  ?> </header>
+    </div>
+    <div id="home">
         <div id="pueblo">
             <h1 class="cabecera">MUÑICOLAND</h1>
         </div>
@@ -80,13 +67,13 @@ if (isset($username)) {
             <?php include "ocurriendo.php"; ?>
 
         </div>
-        
+
         <div id="contenedor-eventos">
-            <h3 id="plantilla-eventos-dia" class="tituloTorneo" style="display: none;">EVENTOS DEL DÍA {{fecha}}</h3>
+            <h3 id="plantilla-eventos-dia" class="tituloTorneo" style="display: none; padding: 5px">EVENTOS DEL DÍA {{fecha}}</h3>
             <div id="plantilla-evento" class="col s4 m4 l4" style="display: none;">
                 <div class="card orange lighten-1">
                     <div class="card-image">
-                        <img src="{{urlImagen}}">                        
+                        <img src="{{urlImagen}}">
                         <button class="btn-floating btn-large pulse halfway-fab waves-effect waves-light green botonAsistir" data-idevento="{{idEvento}}" data-showonstart="{{asiste}}" onclick="asistir('{{idEvento}}')">
                             <i class="large material-icons">event_available</i>
                         </button>
@@ -95,10 +82,10 @@ if (isset($username)) {
                         </button>
                     </div>
                     <div class="card-content">
-                    <span class="card-title white-text descripEvento">{{nombre}}</span>
+                        <span class="card-title white-text descripEvento">{{nombre}}</span>
                         <p class="black" class="descripEvento">
-                        {{descrip}}
-                        <hr> EL {{fecha}} EN {{lugar}} </hr>
+                            {{descrip}}
+                            <hr> EL {{fecha}} EN {{lugar}} </hr>
                         </p>
                     </div>
                 </div>
@@ -122,12 +109,11 @@ if (isset($username)) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script type="text/javascript">
-
-$(document).ready(function() {
-    $(".dropdown-trigger").dropdown({
-        hover: true
+    $(document).ready(function() {
+        $(".dropdown-trigger").dropdown({
+            hover: true
+        });
     });
-});
 </script>
 
 </html>

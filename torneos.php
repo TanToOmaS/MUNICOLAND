@@ -10,7 +10,6 @@ if (isset($username)) {
     header('Location:index.php');
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -36,48 +35,18 @@ if (isset($username)) {
 </head>
 
 <body>
-    <header>
 
-        <div class="menu_bar">
-            <a href="#" class="bt-menu"><span class="icon-list2"></span>Menu</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.php"><span class="tiny material-icons">home</span>EL PUEBLO</a></li>
-                <li><a href="#"><span class="tiny material-icons">local_bar</span>FIESTAS</a></li>
-                <li><a href="torneos.php"><span class="tiny material-icons">videogame_asset</span>TORNEOS</a></li>
-                <li><a href="#"><span class="tiny material-icons">book</span>AZRAEL</a></li>
-                <li><a href="#"><span class="tiny material-icons">live_tv</span>MULTIMEDIA</a></li>
-                <li><a href="logout.php"><span class="tiny material-icons">exit_to_app</span>CERRAR SESIÓN</a></li>
-            </ul>
-        </nav>
-    </header> 
-    
-<div id="home">
-    <div id="pueblo">
-            <h1 class="cabecera">MUÑICOLAND</h1>
-    </div>        	
-    
-<div id='eventos'>
-    
-<?php include "ocurriendo.php"; ?>
-    
-</div>
 
-    <div id="home">
+    <div class="container">
+        <header> <?php include_once "navbar.php";  ?> </header>        
+    </div>
+        <div id="home">
         <div id="pueblo">
-            <h1 id="homehead">MUÑICOLAND</h1>
-        </div>
-
-        <div id='eventos'>
-
-            <?php include "ocurriendo.php"; ?>
-
+            <h1 class="cabecera">MUÑICOLAND</h1>
         </div>
         <div id="contenedor-torneos" class="row">
-
             <div id="plantilla-torneo" class="col s12 m12" style="display: none;">
-                <div class="card horizontal grey darken-3">
+                <div class="card horizontal grey darken-3" style="padding: 5px">
                     <div class="card-image">
                         <img src="{{imagen1}}">
                     </div>
@@ -93,17 +62,11 @@ if (isset($username)) {
                             <p><span class="descripTorneo">EL TORNEO DE {{titulo}} COMENZARÁ EL {{fecha}} A LAS {{hora}}</br></br>{{descripcion}}</p>
                         </div>
                         <div class="card-action">
-                            <button class="btn waves-effect waves-light light-green darken-3 botonAsistir" 
-                                data-idtorneo="{{idTorneo}}" 
-                                data-showonstart="{{noAsiste}}" 
-                                onclick="asistirTorneo('{{idTorneo}}')">
-                                    ME APUNTO<i class="material-icons right">send</i>
+                            <button class="btn waves-effect waves-light light-green darken-3 botonAsistir" data-idtorneo="{{idTorneo}}" data-showonstart="{{noAsiste}}" onclick="asistirTorneo('{{idTorneo}}')">
+                                ME APUNTO<i class="material-icons right">send</i>
                             </button>
-                            <button class="btn waves-effect waves-light red darken-3 botonNoAsistir" 
-                                data-idtorneo="{{idTorneo}}" 
-                                data-showonstart="{{asiste}}" 
-                                onclick="noAsistirTorneo('{{idTorneo}}')">
-                                    NO VOY<i class="material-icons right">highlight_off</i>
+                            <button class="btn waves-effect waves-light red darken-3 botonNoAsistir" data-idtorneo="{{idTorneo}}" data-showonstart="{{asiste}}" onclick="noAsistirTorneo('{{idTorneo}}')">
+                                NO VOY<i class="material-icons right">highlight_off</i>
                             </button>
                             <a class="waves-effect waves-light btn" href="torneoLucha.php"><i class="material-icons right">dehaze</i>VER TORNEO</a>
                         </div>
