@@ -21,7 +21,7 @@ echo "<h3 id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastel
                 <h2>{{nombre}}</h2>
                 <p class="black orange-text fechaHoraEventos">EL {{fecha}} EN {{lugar}}</p>                  
                 <p class="white-text">{{descrip}}</p>
-                <a href=""><img src="{{urlImagen}}"></a>
+                <a><img src="{{urlImagen}}"></a>
                 <div class="carousel-fixed-item center">
                     <a class="btn waves-effect green white-text darken-text-2 botonAsistir" 
                     data-idevento="{{idEvento}}" data-showonstart="{{asiste}}" onclick="asistir('{{idEvento}}')">ME PUNTO</a>

@@ -44,18 +44,19 @@ if (isset($username)) {
 
 <body>
     <!-- estructura dropdown para el navbar -->
-    <ul id="dropdown1" class="dropdown-content">
+    <!-- <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">LUCHA</a></li>
         <li class="divider"></li>
         <li><a href="#!">CARRERAS</a></li>
         <li class="divider"></li>
         <li><a href="#!">DEPORTES</a></li>
-    </ul>
+    </ul> -->
 
     <div class="container">
+
         <header>
             <nav>
-                <div class="nav-wrapper orange darken-2">                   
+                <div class="nav-wrapper orange darken-2 barraNav">                   
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
                         <li><a href="home.php"><span class="tiny material-icons">home</span> EL PUEBLO</a></li>
                         <li><a href="#"><span class="tiny material-icons">local_bar</span> FIESTAS</a></li>
@@ -67,7 +68,6 @@ if (isset($username)) {
                 </div>
             </nav>
         </header>
-
 
         <div id="pueblo">
             <h1 class="cabecera">MUÑICOLAND</h1>
@@ -95,8 +95,8 @@ if (isset($username)) {
                         </button>
                     </div>
                     <div class="card-content">
-                    <span class="card-title white-text">{{nombre}}</span>
-                        <p class="black" style="font-size: 18px">
+                    <span class="card-title white-text descripEvento">{{nombre}}</span>
+                        <p class="black" class="descripEvento">
                         {{descrip}}
                         <hr> EL {{fecha}} EN {{lugar}} </hr>
                         </p>

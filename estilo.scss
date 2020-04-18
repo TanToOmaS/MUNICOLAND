@@ -81,7 +81,21 @@ p {
 .descripEvento {
 
 font-size: 18px;
+font-style: bold;
 	
+}
+
+.fechaHoraEventos{
+ 
+	width: fit-content;
+	text-align: center;
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
+	margin: 0 auto;
+	height: auto;	
 }
 
 .logintitulo p{
@@ -104,14 +118,14 @@ font-size: 18px;
 .descripTorneo{
 	font-family: Arial; 
 	font-size: 18px; 
-	COLOR: rgba(243, 243, 243, 0.925); 
+	color: rgba(243, 243, 243, 0.925); 
 	text-shadow: 0px 0px 9px rgba(243, 243, 243, 0.925); 
 }
 .tituloTorneo{		
 	
 	font-family: 'Roboto', sans-serif; 
 	font-size: 40px; 
-	COLOR:  rgba(247, 178, 52, 0.993); 
+	color:  rgba(247, 178, 52, 0.993); 
 	text-shadow: 0px 0px 9px rgba(247, 178, 52, 0.993);
 	text-align: center;
 	justify-content: center;
@@ -360,29 +374,40 @@ text-shadow: texto3d(10,#111 );
 color: rgb(250, 226, 89);
 }
 
-.fechaHoraEventos {
-	width: fit-content; 
+// .nav {
+// 	width: fit-content; 
+// 	text-align: center;
+// 	justify-content: center;	
+// 	position: relative;
+// 	display: block;
+// 	margin: 0 auto;
+// }
+
+.barraNav {
+
+	width: 100%; 
 	text-align: center;
 	justify-content: center;	
 	position: relative;
-	display: block;
+	display: flex;
 	margin: 0 auto;
+	vertical-align: center;
 }
 
-.swal-text {
-	background-color: #FEFAE3;
-	padding: 17px;
-	border: 1px solid #F0E1A1;
-	display: block;
-	margin: 22px;
-	text-align: center;
-	color: #e79908;
-  }
+// .swal-text {
+// 	background-color: #FEFAE3;
+// 	padding: 17px;
+// 	border: 1px solid #F0E1A1;
+// 	display: block;
+// 	margin: 22px;
+// 	text-align: center;
+// 	color: #e79908;
+//   }
 
-  .swal-modal {
-	background-color: rgba(63,255,106,0.69);
-	border: 3px solid white;
-  }
+//   .swal-modal {
+// 	background-color: rgba(63,255,106,0.69);
+// 	border: 3px solid white;
+//   }
 
 .evenParrafo{
 
@@ -434,10 +459,14 @@ header {
 }
  
 header nav {
-	width:90%;
-	max-width:1000px;
-	margin:20px auto;
-	background:#FF5733;
+	width: 100%; 
+	text-align: center;
+	justify-content: center;	
+	position: relative;
+	display: flex;
+	margin: 20px auto;
+	vertical-align: center;
+	align-items: center;
 }
  
 .menu_bar {
@@ -447,17 +476,35 @@ header nav {
 header nav ul {
 	overflow:hidden;
 	list-style:none;
+	position: relative;
+	text-align: center;
+	justify-content: center;
+	vertical-align: middle;
+	align-items: center;
 }
  
 header nav ul li {
 	float:left;
+	position: relative;
+	text-align: center;
+	justify-content: center;
+	vertical-align: middle;
+	align-items: center;
+	display:flex;		
 }
  
 header nav ul li a {
-	color:#fff;
-	padding:20px;
-	display:block;
+	color:white;	
+	display:flex;
 	text-decoration:none;
+	position: relative;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	border-style: ridge;
+	border-width: 0.3px;
+	border-color: black;
 }
  
 header nav ul li span {
@@ -465,7 +512,7 @@ header nav ul li span {
 }
  
 header nav ul li a:hover {
-	background:#00695c;
+	background:grey;
 }
  
 section {
@@ -481,11 +528,7 @@ section {
 		position: fixed;
 	}
  
-	header nav ul li {
-		display:block;
-		float:none;
-		border-bottom:1px solid rgba(255,255,255, .3);
-	}
+	
  
 	.menu_bar {
 		display:block;
