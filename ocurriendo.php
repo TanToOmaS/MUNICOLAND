@@ -8,28 +8,26 @@ $hora = date("G:i");
 $fecha = date("d-M-y");
 $fechaCastellano = fechaCastellano($fecha);
 
-$evento = "SELECT * FROM eventos WHERE FECHA < CURRENT_TIMESTAMP";
-//$lugar = "SELECT LUGAR FROM eventos WHERE HORA < CURRENT_TIMESTAMP";
-$eventoActual = mysqli_query($conexion, $evento);
 echo "<h3 id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastellano . " </h3>";
 
-while ($result = mysqli_fetch_assoc($eventoActual)) {
-
-    echo "<h3 id='ocurriendo'>No te pierdas ahora el evento <span style='color: white'>" . $result['EVENTO'] . "</span> en <span style='color: white'>" . $result['LUGAR'] . "</span>.  </h3>";
-}
-
 ?>
-<div class="row grey darken-3">
+
+<div class="grey darken-3">
     <h3 span class="tituloTorneo">PRÓXIMOS EVENTOS:</span></h3>
-    <div class="col s8 m8 l8">
-        <div id="contenedor-proximos-eventos" class="carousel carousel-slider center">
-            <div class="carousel-fixed-item center">
-                <a class="btn waves-effect teal lighten-2 white-text darken-text-2">ME PUNTO</a>
-            </div>
-            <div id="plantilla-proximo-evento" class="carousel-item white-text">
+    <hr>
+    <div class="col s12 m12 l12">
+        <div id="contenedor-proximos-eventos" class="carousel carousel-slider center" style="height: 600px">
+            <div class="carousel-item" id="plantilla-proximo-evento">
                 <h2>{{nombre}}</h2>
-                <p class="white-text">EL {{fecha}} EN {{lugar}}</p>
-                <img src="{{urlImagen}}">
+                <p class="black orange-text fechaHoraEventos">EL {{fecha}} EN {{lugar}}</p>                  
+                <p class="white-text">{{descrip}}</p>
+                <a><img src="{{urlImagen}}"></a>
+                <div class="carousel-fixed-item center">
+                    <a class="btn waves-effect green white-text darken-text-2 botonAsistir" 
+                    data-idevento="{{idEvento}}" data-showonstart="{{asiste}}" onclick="asistir('{{idEvento}}')">ME PUNTO</a>
+                    <a class="btn waves-effect red white-text darken-text-2 botonNoAsistir"
+                    data-idevento="{{idEvento}}" data-showonstart="{{noAsiste}}" onclick="noAsistir('{{idEvento}}')">NO VOY</a>
+                </div>
             </div>
         </div>
     </div>

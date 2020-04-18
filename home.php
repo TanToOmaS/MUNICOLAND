@@ -29,6 +29,8 @@ if (isset($username)) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize minified CSS -->
     <link rel="stylesheet" type="text/css" href="materialize/css/materialize.css">
+    <!-- SweetAlert CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/sweetalert2.min.css"> -->
     <script src="jquery-3.4.1.min.js"></script>
     <style>
         body {
@@ -42,18 +44,19 @@ if (isset($username)) {
 
 <body>
     <!-- estructura dropdown para el navbar -->
-    <ul id="dropdown1" class="dropdown-content">
+    <!-- <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">LUCHA</a></li>
         <li class="divider"></li>
         <li><a href="#!">CARRERAS</a></li>
         <li class="divider"></li>
         <li><a href="#!">DEPORTES</a></li>
-    </ul>
+    </ul> -->
 
     <div class="container">
+
         <header>
             <nav>
-                <div class="nav-wrapper orange darken-2">                   
+                <div class="nav-wrapper orange darken-2 barraNav">                   
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
                         <li><a href="home.php"><span class="tiny material-icons">home</span> EL PUEBLO</a></li>
                         <li><a href="#"><span class="tiny material-icons">local_bar</span> FIESTAS</a></li>
@@ -66,14 +69,13 @@ if (isset($username)) {
             </nav>
         </header>
 
-
         <div id="pueblo">
             <h1 class="cabecera">MUÑICOLAND</h1>
         </div>
         <!-- <div id="Municontundence">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTikitikisummertime%2F&tabs=timeline&width=340&height=700&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=489868141175282" width="340" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
         </div> -->
-        <div id='eventos'>
+        <div class="eventos">
 
             <?php include "ocurriendo.php"; ?>
 
@@ -93,8 +95,8 @@ if (isset($username)) {
                         </button>
                     </div>
                     <div class="card-content">
-                    <span class="card-title white-text">{{nombre}}</span>
-                        <p class="black" style="font-size: 18px">
+                    <span class="card-title white-text descripEvento">{{nombre}}</span>
+                        <p class="black" class="descripEvento">
                         {{descrip}}
                         <hr> EL {{fecha}} EN {{lugar}} </hr>
                         </p>
@@ -102,7 +104,7 @@ if (isset($username)) {
                 </div>
             </div>
         </div>
-
+    </div>
 </body>
 
 
@@ -115,6 +117,7 @@ if (isset($username)) {
 <script type="text/javascript" src="assets/js/fechas.js"></script>
 <script type="text/javascript" src="assets/js/eventos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
