@@ -22,52 +22,53 @@ if (isset($username)) {
 <!DOCTYPE html>
 <html lang = 'ES'>
 <html>
-  <head>
+<head>
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <link rel="stylesheet" type="text/css" href="fonts.css">
-     <!-- Materialize icons -->
+    <!-- Materialize icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize minified CSS -->
     <link rel="stylesheet" type="text/css" href="materialize/css/materialize.css">
+    <!-- SweetAlert CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/sweetalert2.min.css"> -->
     <script src="jquery-3.4.1.min.js"></script>
     <style>
-        body {background-color: #000;}
+        body {
+            background-color: #000;
+        }
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>¡MUÑICOLAND! - Home</title>         
-  </head>
-  <body>    
-    <header>  
-    
-    <div class="menu_bar">
-            <a href="#" class="bt-menu"><span class="icon-list2"></span>Menu</a>
-        </div>           
-        <nav>
-            <ul>
-                <li><a href="home.php"><span class="tiny material-icons">home</span>EL PUEBLO</a></li>
-                <li><a href="#"><span class="tiny material-icons">local_bar</span>FIESTAS</a></li>
-                <li><a href="torneos.php"><span class="tiny material-icons">videogame_asset</span>TORNEOS</a></li>
-                <li><a href="#"><span class="tiny material-icons">book</span>AZRAEL</a></li>
-                <li><a href="#"><span class="tiny material-icons">live_tv</span>MULTIMEDIA</a></li>                  
-                <li><a href="logout.php"><span class="tiny material-icons">exit_to_app</span>CERRAR SESIÓN</a></li>
-            </ul>
-        </nav>
-    </header> 
+    <title>¡MUÑICOLAND! - Home</title>
+</head>
+
+<body>
+    <!-- estructura dropdown para el navbar -->
+    <!-- <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">LUCHA</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">CARRERAS</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">DEPORTES</a></li>
+    </ul> -->
+
+    <div class="container">
+        <header> <?php include_once "navbar.php";  ?> </header>
+    </div> 
     
 <div id="home">
     <div id="pueblo">
-            <h1 id="homehead">MUÑICOLAND</h1>
+      <h1 class="cabecera">MUÑICOLAND</h1>
     </div>     	
   <h4 style="text-align: center">ELIMINATORIAS LUCHA</h4> 
-  <div class="brackets">
+  <div class="brackets" id="octavos">
     <ul class="collection with-header">        
         <li class="collection-item teal lighten-2">EQUIPO 1</li>
         <li class="collection-item teal lighten-2">EQUIPO 2</li>
         <br> 
         <li class="collection-item teal lighten-2">EQUIPO 3</li>
         <li class="collection-item teal lighten-2">EQUIPO 4</li>
-        <br> 
+        <br>        
         <li class="collection-item teal lighten-2">EQUIPO 5</li>
         <li class="collection-item teal lighten-2">EQUIPO 6</li>
         <br> 
@@ -88,7 +89,7 @@ if (isset($username)) {
       </ul>
   </div>
 
-  <div class="brackets" style="float:left; position:relative; width: 20%; top:18em">
+  <div class="brackets" id="cuartos" style="float:left; position:relative; width: 20%; top:18em">
     <ul class="collection with-header">        
         <li class="collection-item teal lighten-2">EQUIPO 1</li>
         <li class="collection-item teal lighten-2">EQUIPO 2</li>
@@ -104,7 +105,7 @@ if (isset($username)) {
       </ul>
   </div>
 
-  <div class="brackets" style="float:left; position:relative; width: 20%; top:25.2em">
+  <div class="brackets" id="semis" style="float:left; position:relative; width: 20%; top:25.2em">
     <ul class="collection with-header">        
         <li class="collection-item teal lighten-2">EQUIPO 1</li>
         <li class="collection-item teal lighten-2">EQUIPO 2</li>
@@ -114,7 +115,7 @@ if (isset($username)) {
       </ul>
   </div>
 
-  <div class="brackets" style="float:left; position:relative; width: 20%; top:29em">
+  <div class="brackets" id="final" style="float:left; position:relative; width: 20%; top:29em">
     <ul class="collection with-header">        
         <li class="collection-item teal lighten-2">EQUIPO 1</li>
         <li class="collection-item teal lighten-2">EQUIPO 2</li>                           
@@ -125,25 +126,12 @@ if (isset($username)) {
 
 </body>
 
-  <!-- ZONA JAVASCRIPT: -->
+<!-- ZONA JAVASCRIPT: -->
 
 <script type="text/javascript" src="assets/js/util.js"></script>
-<script type="text/javascript" src="botonesAsistir.js"></script>
+<script type="text/javascript" src="assets/js/torneos.js"></script>
+<script type="text/javascript" src="assets/js/constantes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<script type="text/javascript">
-
-// function asistir(idTorneo){
-//     const datos = 'ID=' + idTorneo;
-//     post(
-//         'funciones_torneos.php',
-//         datos,
-//         r => r == 'true' ? alert('¡Te esperamos!') : alert("Ha habido un error"),
-//         () => alert("Ha fallado la petición")
-//     )
-// }
-
-</script>
  </html>

@@ -12,6 +12,7 @@
 		#{$i}px #{$i}px #{$color}';
 	}
 	@return unquote($text-shadow);
+	
 }
 
 // LO MISMO PARA CREAR SOMBRAS EN LOS DIV O IMG:
@@ -36,6 +37,26 @@ p {
 	font-family: 'Roboto', sans-serif;
 	color: #fff;
 }
+
+.swal-text {
+	background-color: #FEFAE3;
+	padding: 17px;
+	border: 1px solid #F0E1A1;
+	display: block;
+	margin: 22px;
+	text-align: center;
+	color: #61534e;
+  }
+
+  .swal-mixin {
+	background-color: #FEFAE3;
+	padding: 17px;
+	border: 1px solid #F0E1A1;
+	display: block;
+	margin: 22px;
+	text-align: center;
+	color: #61534e;
+  }
 
 .bienvenido{
 
@@ -171,7 +192,6 @@ color: white;
 border: 1px solid #000;
 }
 
-
 td, tr, th{
 	border: 1px solid #000;
 	text-align: center;
@@ -232,14 +252,6 @@ height: 268px;
 	
 }
 
-@function texto3d ($numero, $color){
-	$text-shadow: 1px 1px #{$color};
-	@for $i from 1 through $numero {
-		$text-shadow: '#{$text-shadow},
-		#{$i}px #{$i}px #{$color}';
-	}
-	@return unquote($text-shadow);
-}
 
 .cabecera{
 	font-family: 'Luckiest Guy', cursive;

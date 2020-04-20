@@ -1,4 +1,4 @@
-function get(url, success, error){
+function get(url, success, error){  
   $.ajax({
       type: "GET",
       url: url,
@@ -38,6 +38,6 @@ function toast(tipo, mensaje){
       
       Toast.fire({
         icon: tipo,
-        title: mensaje
+        title: mensaje        
       })
 }
