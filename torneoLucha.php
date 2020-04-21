@@ -32,7 +32,8 @@ if (isset($username)) {
   <link rel="stylesheet" type="text/css" href="materialize/css/materialize.css">
   <!-- SweetAlert CSS -->
   <!-- <link rel="stylesheet" href="assets/css/sweetalert2.min.css"> -->
-  <script src="jquery-3.4.1.min.js"></script>
+  <link href="assets/libs/jquery-bracket/jquery.bracket.min.css" rel="stylesheet">
+
   <style>
     body {
       background-color: #000;
@@ -54,80 +55,19 @@ if (isset($username)) {
       <h1 class="cabecera">MUÑICOLAND</h1>
     </div>
 
-    <h4 style="text-align: center">ELIMINATORIAS LUCHA</h4>
-    <div class="brackets" id="contenedor-rondas">
-    <ul class="collection with-header" id="plantilla-ronda">        
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-        <br>
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-        <br>
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-        <br> 
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-        <br> 
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-        <br> 
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-        <br> 
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-        <br> 
-        <li class="collection-item teal lighten-2">{{Equipo1}}</li>
-        <li class="collection-item teal lighten-2">{{Equipo2}}</li>
-      </ul>
+    <h4 id="titulo-torneo" style="text-align: center">ELIMINATORIAS {{nombreTorneo}}</h4>
+    <div class="brackets" id="contenedor-rondas"></div>
   </div>
-
-  <div class="brackets" id="cuartos" style="float:left; position:relative; width: 20%; top:18em">
-    <ul class="collection with-header">        
-        <li class="collection-item teal lighten-2">EQUIPO 1</li>
-        <li class="collection-item teal lighten-2">EQUIPO 2</li>
-        <br> 
-        <li class="collection-item teal lighten-2">EQUIPO 3</li>
-        <li class="collection-item teal lighten-2">EQUIPO 4</li>
-        <br> 
-        <li class="collection-item teal lighten-2">EQUIPO 5</li>
-        <li class="collection-item teal lighten-2">EQUIPO 6</li>
-        <br> 
-        <li class="collection-item teal lighten-2">EQUIPO 7</li>
-        <li class="collection-item teal lighten-2">EQUIPO 8</li>      
-      </ul>
-  </div>
-
-  <div class="brackets" id="semis" style="float:left; position:relative; width: 20%; top:25.2em">
-    <ul class="collection with-header">        
-        <li class="collection-item teal lighten-2">EQUIPO 1</li>
-        <li class="collection-item teal lighten-2">EQUIPO 2</li>
-        <br> 
-        <li class="collection-item teal lighten-2">EQUIPO 3</li>
-        <li class="collection-item teal lighten-2">EQUIPO 4</li>                   
-      </ul>
-  </div>
-
-  <div class="brackets" id="final" style="float:left; position:relative; width: 20%; top:29em">
-    <ul class="collection with-header">        
-        <li class="collection-item teal lighten-2">EQUIPO 1</li>
-        <li class="collection-item teal lighten-2">EQUIPO 2</li>                           
-      </ul>
-  </div>
-  </div>
-  
 
 </body>
 
 <!-- ZONA JAVASCRIPT: -->
-
-
-<script type="text/javascript" src="assets/js/util.js"></script>
-<script type="text/javascript" src="assets/js/constantes.js"></script>
-<script type="text/javascript" src="assets/js/brackets.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="assets/libs/jquery-bracket/jquery.bracket.min.js"></script>
+  <script type="text/javascript" src="assets/js/util.js"></script>
+  <script type="text/javascript" src="assets/js/constantes.js"></script>
+  <script type="text/javascript" src="assets/js/brackets.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </html>
