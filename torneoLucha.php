@@ -32,11 +32,11 @@ if (isset($username)) {
   <link rel="stylesheet" type="text/css" href="materialize/css/materialize.css">
   <!-- SweetAlert CSS -->
   <!-- <link rel="stylesheet" href="assets/css/sweetalert2.min.css"> -->
-  <link href="assets/libs/jquery-bracket/jquery.bracket.min.css" rel="stylesheet">
+  
 
   <style>
     body {
-      background-color: #000;
+      /* background-color: #000; */
     }
   </style>
   <meta charset="utf-8">
@@ -62,12 +62,13 @@ if (isset($username)) {
 </body>
 
 <!-- ZONA JAVASCRIPT: -->
-  <script src="jquery-3.4.1.min.js"></script>
-  <script src="assets/libs/jquery-bracket/jquery.bracket.min.js"></script>
-  <script type="text/javascript" src="assets/js/util.js"></script>
-  <script type="text/javascript" src="assets/js/constantes.js"></script>
-  <script type="text/javascript" src="assets/js/brackets.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="jquery-3.4.1.min.js"></script>
+<script src="assets/libs/jquery-bracket//jquery-1.11.3.min.js"></script>
+<script src="assets/libs/jquery-bracket/brackets.min.js"></script>
+<script type="text/javascript" src="assets/js/util.js"></script>
+<script type="text/javascript" src="assets/js/constantes.js"></script>
+<script type="text/javascript" src="assets/js/brackets.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </html>
