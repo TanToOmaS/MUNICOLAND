@@ -25,6 +25,7 @@ if (isset($username)) {
 <head>
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <link rel="stylesheet" type="text/css" href="fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <!-- Materialize icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize minified CSS -->
@@ -32,9 +33,10 @@ if (isset($username)) {
     <!-- SweetAlert CSS -->
     <!-- <link rel="stylesheet" href="assets/css/sweetalert2.min.css"> -->
     <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <style>
         body {
-            background-color: #000;
+            background-color: black;
         }
     </style>
     <meta charset="utf-8">
@@ -57,16 +59,17 @@ if (isset($username)) {
     </div>
     <div id="home">
         <div id="pueblo">
-            <h1 class="cabecera">MUÑICOLAND</h1>
+            <h1 class="cabecera" id="cabecera">MUÑICOLAND</h1>
         </div>
         <!-- <div id="Municontundence">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTikitikisummertime%2F&tabs=timeline&width=340&height=700&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=489868141175282" width="340" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
         </div> -->
+
+
         <div class="eventos">
-
-            <?php include "ocurriendo.php"; ?>
-
+            <li><?php include "ocurriendo.php"; ?></li>
         </div>
+
 
         <div id="contenedor-eventos">
             <h3 id="plantilla-eventos-dia" class="tituloTorneo" style="display: none; padding: 5px">EVENTOS DEL DÍA {{fecha}}</h3>
@@ -104,15 +107,25 @@ if (isset($username)) {
 <script type="text/javascript" src="assets/js/fechas.js"></script>
 <script type="text/javascript" src="assets/js/eventos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script type="text/javascript" src="assets/marquee/jquery.marquee.min.js"></script>
+
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $(".dropdown-trigger").dropdown({
-            hover: true
-        });
+        // $(".dropdown-trigger").dropdown({
+        //     hover: true
+
+        // });
+        // createMarquee();
+    });
+    $('h1.cabecera').hide();
+    $('h1.cabecera').fadeIn(3000);
+
+    $(function() {
+        $('.marquee').marquee();
     });
 </script>
 

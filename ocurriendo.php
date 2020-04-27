@@ -8,12 +8,11 @@ $hora = date("G:i");
 $fecha = date("d-M-y");
 $fechaCastellano = fechaCastellano($fecha);
 
-echo "<h3 id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastellano . " </h3>";
-
+echo "<h3 class='marquee' id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastellano . " </h3>";
 ?>
 
 <div class="grey darken-3">
-    <h3 span class="tituloTorneo">PRÓXIMOS EVENTOS:</span></h3>
+    <h3 class="tituloEventos">PRÓXIMOS EVENTOS:</h3>
     <hr>
     <div class="col s12 m12 l12">
         <div id="contenedor-proximos-eventos" class="carousel carousel-slider center" style="height: 600px">
