@@ -73,7 +73,7 @@ if (isset($username)) {
                   <tbody class="tournament-bracket__content">
                     <tr class="tournament-bracket__team {{claseEquipo1Ganador}}">
                       <td class="tournament-bracket__country">
-                        <abbr class="tournament-bracket__code" title="Canada">{{equipo1}}</abbr>
+                        <abbr class="tournament-bracket__code">{{equipo1}}</abbr>
                         <span class="tournament-bracket__flag flag-icon flag-icon-ca" aria-label="Flag"></span>
                       </td>
                       <td class="tournament-bracket__score">
@@ -82,7 +82,7 @@ if (isset($username)) {
                     </tr>
                     <tr class="tournament-bracket__team {{claseEquipo2Ganador}}">
                       <td class="tournament-bracket__country">
-                        <abbr class="tournament-bracket__code" title="Kazakhstan">{{equipo2}}</abbr>
+                        <abbr class="tournament-bracket__code">{{equipo2}}</abbr>
                         <span class="tournament-bracket__flag flag-icon flag-icon-kz" aria-label="Flag"></span>
                       </td>
                       <td class="tournament-bracket__score">
