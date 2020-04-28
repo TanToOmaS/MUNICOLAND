@@ -49,11 +49,16 @@ function mostrarRondas(rondas) {
     $.each(enfrentamiento, function (_i, enfrentamiento) {
       const puntEquipo1 = obtenerResultadoEnfrentamiento(enfrentamiento, 1);
       const puntEquipo2 = obtenerResultadoEnfrentamiento(enfrentamiento, 2);
+      const claseGanador = "tournament-bracket__team--winner";
       const plantillaEnfrentamientoRellenada = plantillaEnfrentamientoString
         .replace(/{{equipo1}}/g, enfrentamiento.equipo1.nombre)
         .replace(/{{resultado1}}/g, puntEquipo1)
         .replace(/{{equipo2}}/g, enfrentamiento.equipo2.nombre)
-        .replace(/{{resultado2}}/g, puntEquipo2);
+        .replace(/{{resultado2}}/g, puntEquipo2)
+        .replace(/{{claseEquipo1Ganador}}/g, puntEquipo1 > puntEquipo2 ? claseGanador : "")
+        .replace(/{{claseEquipo2Ganador}}/g, puntEquipo2 > puntEquipo1 ? claseGanador : "")
+        ;
+        
       const enfrentamientoHtml = $(plantillaEnfrentamientoRellenada);
       enfrentamientoHtml.removeAttr('id');
       contenedorEnfrentamientos.append(enfrentamientoHtml);
