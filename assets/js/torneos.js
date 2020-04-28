@@ -9,7 +9,7 @@ function cargarTorneos(){
         response => {
             const torneos = JSON.parse(response);
             mostrarTorneos(torneos);
-            refrescarBotones();
+            refrescarBotones();            
         },
         error => {
             console.error('Error al cargar los eventos', error);
@@ -84,7 +84,6 @@ function refrescarBotones(){
         }
     });
 }
-
 
 function asistirTorneo(idTorneo) {
     const botonAsistir = $('.botonAsistir[data-idTorneo="' + idTorneo + '"]');

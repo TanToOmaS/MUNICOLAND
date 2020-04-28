@@ -85,7 +85,7 @@ if (isset($username)) {
                         <span class="card-title white-text descripEvento">{{nombre}}</span>
                         <p class="black" class="descripEvento">
                             {{descrip}}
-                            <hr> EL {{fecha}} EN {{lugar}} </hr>
+                        <hr> EL {{fecha}} EN {{lugar}} </hr>
                         </p>
                     </div>
                 </div>
