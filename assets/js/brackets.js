@@ -19,13 +19,6 @@ function cargarRondas() {
   );
 }
 
-const nombresRonda = [
-  { id: 0, nombre: 'CAMPEON' },
-  { id: 1, nombre: 'FINAL' },
-  { id: 2, nombre: 'SEMIS' },
-  { id: 3, nombre: 'CUARTOS' },
-  { id: 4, nombre: 'OCTAVOS' }
-];
 
 function obtenerResultadoEnfrentamiento(enfrentamiento, numEquipo) {
   if (numEquipo === 1) {
@@ -38,26 +31,43 @@ function obtenerResultadoEnfrentamiento(enfrentamiento, numEquipo) {
       .length;
   }
 }
-
+var rondasOrdenadas;
 function mostrarRondas(rondas) {
-  const contenedor = $('#plantilla-ronda');
-  const plantilla = $('#plantilla-enfrentamiento');
-  let rondasOrdenadas = rondas.sort(function (rondaA, rondaB) {
+  const contenedor = $('#plantilla-general');
+  const plantilla = $('#plantilla-ronda');
+  rondasOrdenadas = rondas.sort(function (rondaA, rondaB) {
     return rondaB.id - rondaA.id;
   });
   
-  $.each(rondas, function (i, rondasOrdenadas) {
-    const enfrentamiento = rondasOrdenadas.enfrentamientos;
-    console.log(enfrentamiento);
-    $.each(enfrentamiento, function (i, enfrentamiento) {
+  $.each(rondas, function (_i, rondasOrdenadas) {
+    console.log(rondasOrdenadas);
+    const enfrentamiento = rondasOrdenadas.enfrentamientos;    
+    $.each(enfrentamiento, function (_i, enfrentamiento) {
       const puntEquipo1 = obtenerResultadoEnfrentamiento(enfrentamiento, 1);
       const puntEquipo2 = obtenerResultadoEnfrentamiento(enfrentamiento, 2);
+      
+      const nombresRonda = [
+        { id: 0, nombre: 'CAMPEON' },
+        { id: 1, nombre: 'FINAL' },
+        { id: 2, nombre: 'SEMIS' },
+        { id: 3, nombre: 'CUARTOS' },
+        { id: 4, nombre: 'OCTAVOS' }
+      ];  
+      let titles = [];
+      $.each(rondas, function (_i, ronda) {
+        const nombre = nombresRonda.find(n => n.id === ronda.id);
+        if (nombre) {
+          titles.push(nombre.nombre);
+          console.log(titles);
+        }
+      });
       const plantillaString = plantilla.prop('outerHTML');    // Convertimos el elemento html a string
       const plantillaRellenada = plantillaString
         .replace(/{{Equipo1}}/g, enfrentamiento.equipo1.nombre)
         .replace(/{{Equipo2}}/g, enfrentamiento.equipo2.nombre)
         .replace(/{{resultado1}}/g, puntEquipo1)
         .replace(/{{resultado2}}/g, puntEquipo2)
+        .replace(/{{Ronda}}/g, titles)
         ;
       const rondasHtml = $(plantillaRellenada);
       rondasHtml.show();   // Anular display none de la plantilla
@@ -69,6 +79,22 @@ function mostrarRondas(rondas) {
 
   plantilla.remove();
 }
+
+const nombresRonda = [
+  { id: 0, nombre: 'CAMPEON' },
+  { id: 1, nombre: 'FINAL' },
+  { id: 2, nombre: 'SEMIS' },
+  { id: 3, nombre: 'CUARTOS' },
+  { id: 4, nombre: 'OCTAVOS' }
+];
+
+let titles = [];
+$.each(rondasOrdenadas, function (i, ronda) {
+  const nombre = nombresRonda.find(n => n.id === ronda.id);
+  if (nombre) {
+    titles.push(nombre.nombre);
+  }
+});
 
 // $.each(enfrentamientos, function (i, enfrentamiento) {
 
@@ -107,12 +133,6 @@ function mostrarRondas(rondas) {
 //   brackets.push(bracketsRonda);
 // });
 
-// let titles = [];
-// $.each(rondasOrdenadas, function (i, ronda) {
-//   const nombre = nombresRonda.find(n => n.id === ronda.id);
-//   if (nombre) {
-//     titles.push(nombre.nombre);
-//   }
-// });
+
 
 
