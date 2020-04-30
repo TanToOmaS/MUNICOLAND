@@ -372,12 +372,12 @@ text-shadow: 2px 0 0 #000,
 			 -1px 1px 0 #000;
 }
 
-.swal-title {
-	margin: 0px;
-	font-size: 33px;
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
-	margin-bottom: 28px;
-  }
+// .swal2-title {
+// 	margin: 0px;
+// 	font-size: 33px;
+// 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+// 	margin-bottom: 28px;
+//   }
 
 h2 {
 font-size: 46px;
@@ -406,7 +406,7 @@ color: rgb(250, 226, 89);
 	vertical-align: center;
 }
 
-// .swal-text {
+// .swal2-toast-shown.swal2-shown {
 // 	background-color: #FEFAE3;
 // 	padding: 17px;
 // 	border: 1px solid #F0E1A1;
@@ -414,12 +414,85 @@ color: rgb(250, 226, 89);
 // 	margin: 22px;
 // 	text-align: center;
 // 	color: #e79908;
-//   }
+// }
 
-//   .swal-modal {
-// 	background-color: rgba(63,255,106,0.69);
-// 	border: 3px solid white;
-//   }
+.swal2-container{
+	background-color: #FEFAE3;
+	padding: 0px;
+	border: 0px solid #F0E1A1;
+	display: block;
+	// margin: 22px;
+	text-align: center;
+	color: #e79908;
+	font-size: 25px;
+	text-shadow: 0px;
+}
+
+.swal2-toast-shown.swal2-container.swal2-center{
+	background-color: #FEFAE3;
+	padding: 17px;
+	border: 1px solid #F0E1A1;
+	display: block;
+	margin: 22px;
+	text-align: center;
+	color: #e79908;
+	font-size: 25px;
+	text-shadow: 0px;
+
+	}
+
+.swal2-toast{
+
+	// background-color: #FEFAE3;
+	// padding: 17px;
+	border: 1px solid #F0E1A1;
+	display: block;
+	margin: 22px;
+	text-align: center;	
+	font-size: 25px;
+	text-shadow: 0px;
+	// color: orangered;
+	}
+
+	.swal2-container .swal2-popup.swal2-toast {
+		flex-direction: column;
+		align-items: start;
+		position: relative;
+		// color: orangered;
+	}
+	
+	// .swal2-container .swal2-icon {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	margin-top: -20px !important;
+	// 	color: orangered;
+	// }
+	
+	.swal2-container .swal2-popup.swal2-toast .swal2-title,
+	.swal2-container .swal2-popup.swal2-toast .swal2-content {
+	
+		text-align: center;
+		color: orange;
+		text-shadow: 0px 0px 0px 0px;
+		// font-family: 'Roboto', sans-serif; 
+	}
+
+	.swal2-popup.swal2-toast.swal2-show {
+	background-color: rgba(230, 238, 232, 0.69) !important;
+	// border: 3px solid white;
+	position: relative !important;
+	// top: 20px !important;
+	-webkit-animation: swal2-show .5s !important;
+	animation: swal2-show .5s !important;
+	// color: orangered;
+	text-shadow: 1px 1px 2px black !important; 
+	
+  }
+
+  .swal2-modal {
+	background-color: rgba(1, 17, 5, 0.69);
+	border: 3px solid white;
+  }
 
 .evenParrafo{
 
@@ -434,10 +507,14 @@ h2#login {
 }
 
 h3 {
-font-size: 20px;
+
 font-weight: 20%;
-color: white;
-font-family: 'ARIAL';
+font-family: 'Roboto', sans-serif; 
+font-size: 40px; 
+color:  rgba(247, 178, 52, 0.993); 
+text-shadow: 0px 0px 9px rgba(247, 178, 52, 0.993);
+text-align: center;
+justify-content: center;
 }
 
 #ocurriendo {

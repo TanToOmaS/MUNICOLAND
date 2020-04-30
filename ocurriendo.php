@@ -8,7 +8,7 @@ $hora = date("G:i");
 $fecha = date("d-M-y");
 $fechaCastellano = fechaCastellano($fecha);
 
-echo "<h3 class='marquee' id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastellano . " </h3>";
+echo "<h4 id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastellano . " </h4>";
 ?>
 
 <div class="grey darken-3">
