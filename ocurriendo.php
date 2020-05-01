@@ -11,13 +11,13 @@ $fechaCastellano = fechaCastellano($fecha);
 echo "<h4 id='ocurriendo'>Actualmente son las " . $hora . " del " . $fechaCastellano . " </h4>";
 ?>
 
-<div class="grey darken-3">
+<div class="grey darken-3" style="padding-top:1px">
     <h3 class="tituloEventos">PRÓXIMOS EVENTOS:</h3>
     <hr>
     <div class="col s12 m12 l12">
         <div id="contenedor-proximos-eventos" class="carousel carousel-slider center">
             <div class="carousel-item" id="plantilla-proximo-evento">
-                <h2>{{nombre}}</h2>
+                <h2 style="font-weight: bold;">{{nombre}}</h2>
                 <p class="black orange-text fechaHoraEventos">EL {{fecha}} EN {{lugar}}</p>                  
                 <p class="white-text">{{descrip}}</p>
                 <a><img src="{{urlImagen}}"></a>
