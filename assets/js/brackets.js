@@ -8,12 +8,16 @@ function cargarTorneo() {
   const url = `${URL_BASE}/${URL_API}/${ENDPOINT_TORNEOS}/${idTorneo}`;
   get(
     url,
-    response => {
-      const torneo = JSON.parse(response);
-      $('#tituloTorneo').text(torneo.tipo);
-      $('#descripcion').text(torneo.descripcion);
-      const rondas = torneo.rondas;
-      mostrarRondas(rondas);
+    (response, textStatus, xhr) => {
+      if(xhr.status === 204){
+        window.location.href = `${URL_BASE}/paginas_error/404.php`;
+      }else{
+        const torneo = JSON.parse(response);
+        $('#tituloTorneo').text(torneo.tipo);
+        $('#descripcion').text(torneo.descripcion);
+        const rondas = torneo.rondas;
+        mostrarRondas(rondas);
+      }
     },
     error => {
       console.error('Error al cargar los eventos', error);

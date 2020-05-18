@@ -47,6 +47,9 @@ class RepositorioTorneo extends RepositorioBase {
         $query->bindParam(1, $idTorneo, PDO::PARAM_INT);
         $query->execute();
         $torneoDb = $query->fetch(PDO::FETCH_ASSOC);
+        if($query->rowCount() === 0) {
+            return null;
+        }
         $torneo = [];
 
         $torneo = $this->aTorneo($torneoDb);

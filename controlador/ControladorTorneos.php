@@ -17,7 +17,11 @@ class ControladorTorneos {
 
     function obtenerTorneo($idTorneo){
         $torneo = $this->servicioTorneos->obtenerTorneo($idTorneo);
-        die(json_encode($torneo));
+        if($torneo !== null){
+            die(json_encode($torneo));
+        }else{
+            http_response_code(204);
+        }
     }
 
     function registrarParticipacion($username, $idTorneo, $participa){
