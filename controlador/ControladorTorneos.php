@@ -15,6 +15,11 @@ class ControladorTorneos {
         die(json_encode($torneos));
     }
 
+    function obtenerTorneo($idTorneo){
+        $torneo = $this->servicioTorneos->obtenerTorneo($idTorneo);
+        die(json_encode($torneo));
+    }
+
     function registrarParticipacion($username, $idTorneo, $participa){
         $resultado = $this->servicioTorneos->registrarParticipacion($username, $idTorneo, $participa);
         if($resultado == true){

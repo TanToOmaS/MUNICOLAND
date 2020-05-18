@@ -42,6 +42,26 @@ class RepositorioTorneo extends RepositorioBase {
         return $torneos;
     }
 
+    function obtenerTorneo($idTorneo){
+		$query = $this->db->prepare("SELECT * FROM torneos WHERE ID = ?");
+        $query->bindParam(1, $idTorneo, PDO::PARAM_INT);
+        $query->execute();
+        $torneoDb = $query->fetch(PDO::FETCH_ASSOC);
+        $torneo = [];
+
+        $torneo = $this->aTorneo($torneoDb);
+        $idsEquipos = $this->cargarEquiposParticipantes($torneo->id);
+        $equipos = [];
+        foreach($idsEquipos as $idEquipo) {
+            $equipo = $this->repositorioEquipo->obtenerEquipo($idEquipo);
+            array_push($equipos, $equipo);
+        }
+        $torneo->equipos = $equipos;
+        $rondas = $this->repositorioRonda->obtenerRondas($torneo->id);
+        $torneo->rondas = $rondas;
+        return $torneo;
+    }
+
     function registrarParticipacion($idEquipo, $idTorneo){
         $query = $this->db->prepare("INSERT INTO equipos_torneos VALUES (?, ?)");
         $query->bindParam(1, $idEquipo, PDO::PARAM_INT);

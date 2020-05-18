@@ -1,14 +1,17 @@
 $(document).ready(function () {
-  cargarRondas();
+  cargarTorneo();
 });
 
-function cargarRondas() {
-  const url = `${URL_BASE}/${URL_API}/${ENDPOINT_TORNEOS}`;
+function cargarTorneo() {
+  const queryStringParams = new URLSearchParams(window.location.search);
+  const idTorneo = queryStringParams.get('idTorneo');
+  const url = `${URL_BASE}/${URL_API}/${ENDPOINT_TORNEOS}/${idTorneo}`;
   get(
     url,
     response => {
-      const torneos = JSON.parse(response);
-      const torneo = torneos[0];
+      const torneo = JSON.parse(response);
+      $('#tituloTorneo').text(torneo.tipo);
+      $('#descripcion').text(torneo.descripcion);
       const rondas = torneo.rondas;
       mostrarRondas(rondas);
     },

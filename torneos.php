@@ -68,7 +68,7 @@ if (isset($username)) {
                             <button class="btn waves-effect waves-light red darken-3 botonNoAsistir" data-idtorneo="{{idTorneo}}" data-showonstart="{{asiste}}" onclick="noAsistirTorneo('{{idTorneo}}')">
                                 NO VOY<i class="material-icons right">highlight_off</i>
                             </button>
-                            <a class="waves-effect waves-light btn" href="torneoLucha.php"><i class="material-icons right">dehaze</i>VER TORNEO</a>
+                            <a class="waves-effect waves-light btn botonVerTorneo" href="{{url}}"><i class="material-icons right">dehaze</i>VER TORNEO</a>
                         </div>
                     </div>
                 </div>

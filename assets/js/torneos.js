@@ -25,6 +25,7 @@ function mostrarTorneos(torneos){
     $.each(torneos, function(i, torneo) {
         const asiste = comprobarAsistencia(torneo.equipos, torneo.equipos);
         const noAsiste = !asiste;
+        const url = construirUrl(torneo);
         // Reemplazamos los parametros de sustitución por los valores del torneo actual
         const plantillaRellenada = plantillaString
             .replace(/{{imagen1}}/g, torneo.img1)
@@ -37,6 +38,7 @@ function mostrarTorneos(torneos){
             .replace(/{{asiste}}/g, asiste)
             .replace(/{{noAsiste}}/g, noAsiste)
             .replace(/{{idTorneo}}/g, torneo.id)
+            .replace(/{{url}}/g, url)
         ;
         
         // Convertimos el string a un elemento html usando Jquery
@@ -47,6 +49,10 @@ function mostrarTorneos(torneos){
         contenedor.append(torneoHtml);
     });
     plantilla.remove();
+}
+
+function construirUrl(torneo){
+    return "http://localhost/municoland/torneo.php?idTorneo=" + torneo.id;
 }
 
 function comprobarAsistencia(equipos, equipo){    

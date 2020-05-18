@@ -23,6 +23,11 @@ class ServicioTorneo {
         return $torneos;
     }
 
+    function obtenerTorneo($idTorneo) {
+        $torneo = $this->repositorioTorneo->obtenerTorneo($idTorneo);
+        return $torneo;
+    }
+
     function registrarParticipacion($username, $idTorneo, $participa){
         $usuario = $this->repositorioUsuario->obtenerUsuarioPorUsername($username);
         $equipo = $this->repositorioEquipo->obtenerEquipoPorIdUsuario($usuario->id);

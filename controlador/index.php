@@ -24,6 +24,12 @@ $router->map('GET', '/torneos', function() {
     $controlador->obtenerTorneos();
 }, 'torneos_obtener');
 
+$router->map('GET', '/torneos/[i:id_torneo]', function($idTorneo) {
+    include_once('ControladorTorneos.php');
+    $controlador = new ControladorTorneos();
+    $controlador->obtenerTorneo($idTorneo);
+}, 'torneo_obtener');
+
 $router->map('POST', '/torneos/[i:id_torneo]/participacion', function($idTorneo) {
     include_once('ControladorTorneos.php');
     $controlador = new ControladorTorneos();
