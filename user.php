@@ -10,12 +10,17 @@ class User extends DB
 
     public function userExists($user, $pass)
     {
-
-
-        $query = $this->connect()->prepare('SELECT * FROM usuarios WHERE USUARIO = :user AND PASSWORD = :pass');
-        $query->execute(['user' => $user, 'pass' => $pass]);
+        $query = $this->connect()->prepare('SELECT * FROM usuarios WHERE USUARIO = :user');
+        $query->execute(['user' => $user]);
 
         if ($query->rowCount()) {
+            $userDb = $query->fetch(PDO::FETCH_ASSOC);
+            $passwordDb = $userDb["PASSWORD"];
+            if(password_verify($pass, $passwordDb)){
+                return true;
+            }else{
+                return false;
+            }
             return true;
         } else {
             return false;

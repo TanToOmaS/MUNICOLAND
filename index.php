@@ -1,5 +1,6 @@
 <?php
 
+
 include_once "user.php";
 include_once "user_session.php";
 
@@ -55,18 +56,14 @@ $user = new User();
 </html>
 
 <?php
-
 if (isset($_SESSION['user'])) {
   echo "Hay sesión";
   $user->setUser($userSession->getCurrentUser());
   header('Location: home.php');
 } else if (isset($_POST['USUARIO']) && isset($_POST['PASSWORD'])) {
-  echo "Validación de login";
-  echo "</br>";
   $userForm = $_POST['USUARIO'];
   $passForm = $_POST['PASSWORD'];
   if ($user->userExists($userForm, $passForm)) {
-    echo "usuario validado";
     $userSession->setCurrentUser($userForm);
     $user->setUser($userForm);
     header('Location: home.php');
