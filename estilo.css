@@ -5,13 +5,9 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body{
-  color: white;
-}
-
 p {
   font-family: 'Roboto', sans-serif;
-  color: #fff;
+  color: yellow;
 }
 
 .swal-text {
@@ -196,18 +192,8 @@ td, tr, th {
 }
 
 .boxshadow {
-  -webkit-box-shadow: 1px 1px #000,
- 1px 1px #000,
- 2px 2px #000,
- 3px 3px #000,
- 4px 4px #000,
- 5px 5px #000;
-          box-shadow: 1px 1px #000,
- 1px 1px #000,
- 2px 2px #000,
- 3px 3px #000,
- 4px 4px #000,
- 5px 5px #000;
+  -webkit-box-shadow: 1px 1px #000, 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000;
+          box-shadow: 1px 1px #000, 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000;
   -ms-flex-line-pack: center;
       align-content: center;
 }
@@ -266,37 +252,7 @@ td, tr, th {
           transform: rotate(-5deg);
   position: relative;
   top: -20px;
-  text-shadow: 1px 1px #111,
- 1px 1px #111,
- 2px 2px #111,
- 3px 3px #111,
- 4px 4px #111,
- 5px 5px #111,
- 6px 6px #111,
- 7px 7px #111,
- 8px 8px #111,
- 9px 9px #111,
- 10px 10px #111,
- 11px 11px #111,
- 12px 12px #111,
- 13px 13px #111,
- 14px 14px #111,
- 15px 15px #111,
- 16px 16px #111,
- 17px 17px #111,
- 18px 18px #111,
- 19px 19px #111,
- 20px 20px #111,
- 21px 21px #111,
- 22px 22px #111,
- 23px 23px #111,
- 24px 24px #111,
- 25px 25px #111,
- 26px 26px #111,
- 27px 27px #111,
- 28px 28px #111,
- 29px 29px #111,
- 30px 30px #111;
+  text-shadow: 1px 1px #111, 1px 1px #111, 2px 2px #111, 3px 3px #111, 4px 4px #111, 5px 5px #111, 6px 6px #111, 7px 7px #111, 8px 8px #111, 9px 9px #111, 10px 10px #111, 11px 11px #111, 12px 12px #111, 13px 13px #111, 14px 14px #111, 15px 15px #111, 16px 16px #111, 17px 17px #111, 18px 18px #111, 19px 19px #111, 20px 20px #111, 21px 21px #111, 22px 22px #111, 23px 23px #111, 24px 24px #111, 25px 25px #111, 26px 26px #111, 27px 27px #111, 28px 28px #111, 29px 29px #111, 30px 30px #111;
 }
 
 .degradado {
@@ -377,37 +333,7 @@ table#puntuaciones tr:hover {
 }
 
 h1 {
-  text-shadow: 1px 1px #111,
- 1px 1px #111,
- 2px 2px #111,
- 3px 3px #111,
- 4px 4px #111,
- 5px 5px #111,
- 6px 6px #111,
- 7px 7px #111,
- 8px 8px #111,
- 9px 9px #111,
- 10px 10px #111,
- 11px 11px #111,
- 12px 12px #111,
- 13px 13px #111,
- 14px 14px #111,
- 15px 15px #111,
- 16px 16px #111,
- 17px 17px #111,
- 18px 18px #111,
- 19px 19px #111,
- 20px 20px #111,
- 21px 21px #111,
- 22px 22px #111,
- 23px 23px #111,
- 24px 24px #111,
- 25px 25px #111,
- 26px 26px #111,
- 27px 27px #111,
- 28px 28px #111,
- 29px 29px #111,
- 30px 30px #111;
+  text-shadow: 1px 1px #111, 1px 1px #111, 2px 2px #111, 3px 3px #111, 4px 4px #111, 5px 5px #111, 6px 6px #111, 7px 7px #111, 8px 8px #111, 9px 9px #111, 10px 10px #111, 11px 11px #111, 12px 12px #111, 13px 13px #111, 14px 14px #111, 15px 15px #111, 16px 16px #111, 17px 17px #111, 18px 18px #111, 19px 19px #111, 20px 20px #111, 21px 21px #111, 22px 22px #111, 23px 23px #111, 24px 24px #111, 25px 25px #111, 26px 26px #111, 27px 27px #111, 28px 28px #111, 29px 29px #111, 30px 30px #111;
 }
 
 #homehead {
@@ -416,30 +342,13 @@ h1 {
   text-align: center;
   color: #FF5733;
   font-family: 'Arial Narrow Bold';
-  text-shadow: 2px 0 0 #000, 
- -2px 0 0 #000, 
- 0 2px 0 #000, 
- 0 -2px 0 #000, 
- 1px 1px #000, 
- -1px -1px 0 #000, 
- 1px -1px 0 #000,
- -1px 1px 0 #000;
+  text-shadow: 2px 0 0 #000,  -2px 0 0 #000,  0 2px 0 #000,  0 -2px 0 #000,  1px 1px #000,  -1px -1px 0 #000,  1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 h2 {
   font-size: 46px;
   font-family: 'Roboto', sans-serif;
-  text-shadow: 1px 1px #111,
- 1px 1px #111,
- 2px 2px #111,
- 3px 3px #111,
- 4px 4px #111,
- 5px 5px #111,
- 6px 6px #111,
- 7px 7px #111,
- 8px 8px #111,
- 9px 9px #111,
- 10px 10px #111;
+  text-shadow: 1px 1px #111, 1px 1px #111, 2px 2px #111, 3px 3px #111, 4px 4px #111, 5px 5px #111, 6px 6px #111, 7px 7px #111, 8px 8px #111, 9px 9px #111, 10px 10px #111;
   color: rgba(247, 178, 52, 0.993);
 }
 

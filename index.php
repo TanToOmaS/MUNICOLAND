@@ -37,10 +37,10 @@ $user = new User();
     <div class="logintitulo">INICIA SESIÓN:</div>
     <br>
     <form action="" method="post" class="formlogin">
-      <input class="grey darken-4" type="text" placeholder="USUARIO" name="USUARIO" />
+      <input class="grey darken-4" style="color:orange" type="text" placeholder="USUARIO" name="USUARIO" />
       <br>
       <br>
-      <input class="grey darken-4" type="password" placeholder="CONTRASEÑA" name="PASSWORD">
+      <input class="grey darken-4" style="color:orange" type="password" placeholder="CONTRASEÑA" name="PASSWORD">
       <br>
       <br>
       <div class="button">

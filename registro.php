@@ -53,15 +53,15 @@ ini_set('error_reporting', E_ALL);
     <hr style="color: #0056b2;" />
     <br>
     <form action="registro.php" method="post" class="formlogin">
-      <input class="grey darken-4" type="text" placeholder="USUARIO" name="USUARIO" />
+      <input class="grey darken-4" style="color:orange" type="text" placeholder="USUARIO" name="USUARIO" />
       <br>
-      <input class="grey darken-4" type="text" placeholder="NOMBRE" name="NOMBRE" />
+      <input class="grey darken-4" style="color:orange" type="text" placeholder="NOMBRE" name="NOMBRE" />
       <br>
-      <input class="grey darken-4" type="text" placeholder="APELLIDO" name="APELLIDO" />
+      <input class="grey darken-4" style="color:orange" type="text" placeholder="APELLIDO" name="APELLIDO" />
       <br>
-      <input class="grey darken-4" type="email" placeholder="EMAIL" name="EMAIL" />
+      <input class="grey darken-4" style="color:orange" type="email" placeholder="EMAIL" name="EMAIL" />
       <br>
-      <input class="grey darken-4" type="password" placeholder="PASSWORD" name="PASSWORD" />
+      <input class="grey darken-4" style="color:orange" type="password" placeholder="PASSWORD" name="PASSWORD" />
       <br>
       <div class="button">
         <button class="btn waves-effect waves-light" type="submit" name="CREAR">CREAR<i class="material-icons right">send</i></button>
