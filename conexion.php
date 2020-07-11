@@ -12,9 +12,9 @@ ini_set('error_reporting', E_ALL);
 
 
 $host = "localhost"; //El nombre del servidor local.
-$user= "root"; // El nombre del usuario que accederá.
-$pass = "root"; // La contraseña con la que accederé (vacía de momento).
-$bd= "munico"; // El nombre de la BBDD a la que entraré.
+$user= "id14315896_tantoomas"; // El nombre del usuario que accederá.
+$pass = "Alex6073,Alex"; // La contraseña con la que accederé (vacía de momento).
+$bd= "id14315896_municoland"; // El nombre de la BBDD a la que entraré.
 
 
 //Después creo la variable para la conexión a la BBDD:

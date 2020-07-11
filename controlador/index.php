@@ -79,7 +79,7 @@ if ($match && is_callable($match['target'])) {
     die("404");
     //session_unset();
     //session_destroy();
-    // no route was matched so we return 404
+    // no se ha encontrado esa ruta, por lo que se devuelve un 404.
     header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
     die();
 }

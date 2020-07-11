@@ -71,7 +71,7 @@ if (isset($username)) {
         </div>
 
 
-        <div id="contenedor-eventos">
+        <div id="contenedor-eventos" class="col s4 m4 l4">
             <h3 id="plantilla-eventos-dia" class="tituloTorneo" style="display: none; padding: 5px">EVENTOS DEL DÍA {{fecha}}</h3>
             <div id="plantilla-evento" class="col s4 m4 l4" style="display: none;">
                 <div class="card orange lighten-1">
